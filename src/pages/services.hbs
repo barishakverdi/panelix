@@ -1,0 +1,42 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="Hizmetlerimiz" url="services.html")
+                )
+            }}
+        </div>
+    </div>
+    {{> partials/components/hero.hbs
+        title="TV Panel, Ekran ve LED Arızalarında Profesyonel Servis Çözümleri"
+        description="Panelix olarak TV panel değişimi, kırık ekran değişimi, LED arızaları, reflektör sorunları ve görüntü problemlerine yönelik profesyonel teknik servis hizmetleri sunuyoruz. İstanbul genelinde, marka ve model fark etmeksizin uygun çözüm için destek sağlıyoruz."
+    }}
+    {{> partials/components/services/content.hbs
+        minPt=50 maxPt=50 minPb=50 maxPb=80
+    }}
+    {{> partials/components/cta.hbs
+        title="Hangi hizmetin sizin arızanıza uygun olduğundan emin değil misiniz?"
+        description="TV’nizdeki sorunu bize WhatsApp üzerinden iletin, sizi doğru hizmete yönlendirelim."
+        minPb=50 maxPb=80
+    }}
+    {{> partials/components/seo.hbs
+        editor="<h2>Televizyon Arızalarında Profesyonel Hizmet Çözümleri</h2><p>Panelix olarak televizyonlarda en sık karşılaşılan panel, ekran, led ve görüntü arızalarına yönelik profesyonel teknik servis hizmetleri sunuyoruz. TV panel değişimi, kırık ekran değişimi, led ve reflektör işlemleri, görüntü sorunları ve farklı teknik arızalarda marka ve model fark etmeksizin çözüm üretiyoruz.<p><h3>İstanbul Genelinde Servis Desteği</h3><p>Bakırköy merkezli servis yapımızla İstanbul’un birçok ilçesine destek sağlıyor, özellikle panel değişimi, led arızası ve ekran problemlerinde uygun servis planlamasıyla hizmet veriyoruz.</p>  <h3>Doğru Hizmete Hızlı Ulaşın</h3><p>Televizyonunuzdaki arızanın hangi hizmet kapsamına girdiğinden emin değilseniz, bizimle iletişime geçerek ön bilgi alabilirsiniz. Uzman ekibimiz arıza belirtilerine göre sizi doğru işlem sürecine yönlendirir.</p>"
+        minPb=50 maxPb=80
+    }}
+    {{> partials/components/faq.hbs
+        minPb=50 maxPb=100
+        array=(array
+            (object title="Panel Değişimi Ne Zaman Gerekir?" description="Televizyonunuzun ekranında renk bozulmaları, çizgiler veya görüntü kaybı gibi sorunlar varsa panel değişimi gerekebilir. Uzman ekibimiz arızanın panel kaynaklı olup olmadığını değerlendirerek size en uygun çözümü sunar.")
+            (object title="Kırık Ekran Değişimi Nasıl Yapılır?" description="Kırık ekran değişimi, televizyonunuzun modeline ve ekran boyutuna göre özel ekipman ve teknik bilgi gerektirir. Panelix olarak, deneyimli teknisyenlerimizle hızlı ve güvenilir kırık ekran değişimi hizmeti sunuyoruz.")
+            (object title="LED Arızaları Nasıl Anlaşılır?" description="LED arızaları genellikle ekranın belirli bölgelerinde kararma, renk bozulması veya görüntü kaybı şeklinde kendini gösterir. Uzman ekibimiz LED arızalarını tespit ederek uygun onarım veya değişim işlemi gerçekleştirir.")
+            (object title="Reflektör Sorunları Nedir?" description="Reflektör sorunları, televizyonunuzun ışık yansıtma sistemindeki arızalardır ve genellikle görüntü kalitesinde düşüşe neden olur. Panelix olarak reflektör sorunlarını tespit edip gerekli tamirat veya değişim işlemlerini yaparak görüntü kalitenizi eski haline getiriyoruz.")
+        )
+    }}
+</main>
+
+{{> partials/footer.hbs }}

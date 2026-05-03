@@ -1,0 +1,37 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="grid grid-cols-12 gap-6 max-lg:grid-cols-1">
+            <div class="lg:col-span-6 lg:relative lg:z-2">
+                <img src="assets/image/index/image-2.jpg" alt="" loading="eager" width="798" height="628" class="full-cover rounded-xl">
+            </div>
+            <div class="lg:col-span-1 max-lg:hidden"></div>
+            <div class="lg:col-span-5 lg:clamp-[py,24px,88px] lg:relative max-lg:order-first">
+                <img src="assets/image/favicon.svg" alt="" loading="eager" width="467" height="536" class="absolute clamp-[left,-120px,-350px] top-1/2 -translate-y-1/2 max-lg:hidden">
+                <div class="flex flex-col clamp-[gap,16px,40px] lg:relative z-2">
+                    <div class="w-fit bg-secondary/10 inline-flex items-center clamp-[gap,16px,24px] px-6 py-3 rounded-4xl">
+                        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="clamp-[w,20px,24px] h-auto">
+                            <path d="M2.66667 1.96875C2.3 1.96875 2 2.26406 2 2.625V13.125C2 13.4859 2.3 13.7812 2.66667 13.7812H21.3333C21.7 13.7812 22 13.4859 22 13.125V2.625C22 2.26406 21.7 1.96875 21.3333 1.96875H2.66667ZM0 2.625C0 1.17715 1.19583 0 2.66667 0H21.3333C22.8042 0 24 1.17715 24 2.625V13.125C24 14.5729 22.8042 15.75 21.3333 15.75H2.66667C1.19583 15.75 0 14.5729 0 13.125V2.625ZM6.33333 17.7188H17.6667C18.2208 17.7188 18.6667 18.1576 18.6667 18.7031C18.6667 19.2486 18.2208 19.6875 17.6667 19.6875H6.33333C5.77917 19.6875 5.33333 19.2486 5.33333 18.7031C5.33333 18.1576 5.77917 17.7188 6.33333 17.7188Z" fill="#1D4ED8"></path>
+                        </svg>
+                        <span class="clamp-[text,16px,20px] leading-tight font-medium tracking-[-0.2px] text-secondary">İstanbul geneli hizmet · uygun süreçlerde ikame TV</span>
+                    </div>
+                    <h2 class="text-h1 text-dark *:text-secondary">TV’niz Tamirdeyken Siz Televizyonsuz Kalmayın</h2>
+                    <p class="text-body text-text *:font-semibold">Panelix olarak, televizyonunuz servis sürecindeyken mümkün olan durumlarda müşterilerimize geçici ikame televizyon desteği sunuyoruz. Böylece onarım sürecinde eviniz televizyonsuz kalmaz, süreç daha konforlu ve güvenli ilerler.</p>
+                    <div class="grid grid-cols-2 clamp-[gap,10px,20px] max-xs:grid-cols-1">
+                        {{> partials/components/button.hbs
+                            text="Fiyat Teklifi Al"
+                            icon="icon-phone"
+                            url="tel:+905350577188"
+                            color="primary"
+                        }}
+                        {{> partials/components/button.hbs
+                            text="Whatsapp’tan Fiyat Sor"
+                            icon="icon-whatsapp"
+                            url="https://wa.me/+905350577188"
+                            color="whatsapp"
+                        }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

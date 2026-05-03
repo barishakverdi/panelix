@@ -1,0 +1,26 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="flex flex-col items-center clamp-[gap,16px,24px] clamp-[mb,24px,50px]">
+            <div class="w-fit bg-secondary/10 inline-flex items-center clamp-[gap,16px,24px] px-6 py-3 rounded-4xl">
+                <i class="icon-screwdriver clamp-[text,18px,21px] clamp-[h,18px,21px] text-secondary"></i>
+                <span class="clamp-[text,16px,20px] leading-tight font-medium tracking-[-0.2px] text-secondary">TV’nizin Arıza Belirtileri Nelerdir?</span>
+            </div>
+            <h2 class="text-h2 text-dark text-center *:text-secondary">TV’nizin Arıza Belirtileri Nelerdir?</h2>
+        </div>
+        <div class="grid grid-cols-3 clamp-[gap,16px,24px] max-lg:grid-cols-2 max-md:grid-cols-1">
+            {{#each index.malfunction as |item|}}
+                <div class="border border-text/20 rounded-xl overflow-hidden">
+                    <img src="{{item.image}}" alt="" loading="lazy" width="433" height="289" class="w-full h-auto aspect-433/289 object-cover">
+                    <div class="clamp-[p,16px,20px]">
+                        <h3 class="mb-3">
+                            <a href="#" class="inline-block lg:*:hover:text-secondary">
+                                <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">{{item.title}}</span>
+                            </a>
+                        </h3>
+                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text">{{item.description}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panelix</title>
+    <meta name="description" content="Site Açıklama Yazısı">
+    <meta name="keywords" content="vite starter, static site, coding">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Panelix" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0F172A" />
+    <!--    <link rel="stylesheet" href="../assets/style/style.css">-->
+    <script>
+        let FF_FOUC_FIX;
+        let domReady = (cb) => { document.readyState === 'interactive' || document.readyState === 'complete' ? cb() : document.addEventListener('DOMContentLoaded', cb);};
+        domReady(() => { document.body.style.visibility = 'visible'; });
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('data', {
+                menuOpen: false,
+                dropdownMenuOpen: false,
+                activeIndex: -1,
+                isDesktop: window.innerWidth > 1024,
+                checkDevice() {
+                    this.isDesktop = window.innerWidth > 1024;
+                }
+            })
+        })
+    </script>
+  <script type="module" src="assets/script/script.js"></script>
+  <link rel="stylesheet" href="assets/style/app.css">
+</head>
+<body class="group/body clamp-[--headerHeight,85px,115px,1024px,1680px]" :class="{ 'overflow-hidden': $store.data.menuOpen || $store.data.dropdownMenuOpen }"
+      x-init="$store.data.checkDevice()" @resize.window="$store.data.checkDevice()"
+      style="visibility: hidden">
+<script>0</script><header class="group/body fixed left-0 top-0 z-100 w-full h-(--headerHeight) transition-all duration-300 group-scrolling-down/body:bg-white group-scrolling-down/body:shadow-sm">
+    <div class="size-full flex relative">
+        <div class="container grow">
+            <div class="h-full flex items-center justify-between">
+                <a href="index.html" title="Ana sayfaya git" class="block max-lg:relative max-lg:z-2">
+                    <img src="assets/image/logo.svg" alt="" loading="eager" width="227" height="76" class="clamp-[w,125px,227px,] h-auto max-">
+                </a>
+                <div class="h-full flex items-center clamp-[gap,12px,18px,1024px]">
+                    <div x-show="$store.data.isDesktop || (!$store.data.isDesktop && $store.data.menuOpen)" x-collapse.duration.450ms class="lg:h-full max-lg:absolute max-lg:left-0 max-lg:top-0 max-lg:w-full max-lg:h-auto max-lg:max-h-svh max-lg:bg-white">
+                        <nav class="lg:h-full max-lg:pt-(--headerHeight)">
+                            <ul class="lg:h-full flex lg:items-center max-lg:h-auto max-lg:max-h-[calc(100svh-var(--headerHeight))] max-lg:overflow-y-auto max-lg:border-t max-lg:border-dark/10 max-lg:flex-col">
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === 0 }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="services.html" data-has-sub-menu class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === 0 ? -1 : 0;;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === 0 ? -1 : 0;">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">Hizmetlerimiz</span>
+                                                <i class="icon-angle-down text-[9px] h-2.25 text-dark transition-all duration-300 lg:group-hover/i:text-primary group-toggle/i:text-primary group-toggle/i:scale-y-[-1] max-lg:hidden!"></i>
+                                        </a>
+                                            <div class="lg:hidden size-7.5 border border-dark/10 rounded-full flex-center"
+                                                @click="$store.data.activeIndex = $store.data.activeIndex === 0 ? -1 : 0;">
+                                                <i class="icon-angle-down text-[12px] h-3 text-dark transition-transform duration-300 group-toggle/i:scale-y-[-1]"></i>
+                                            </div>
+                                            <div x-show="(!$store.data.isDesktop && $store.data.activeIndex === 0) || $store.data.isDesktop" x-collapse.duration.300ms class="lg:absolute lg:left-1/2 lg:top-full lg:-translate-x-1/2 lg:w-max max-lg:w-full">
+                                                <div x-show="($store.data.isDesktop && $store.data.activeIndex === 0) || !$store.data.isDesktop" x-transition.duration.300ms class="mt-2">
+                                                        <div class="w-full max-w-700">
+                                                            <div class="w-full lg:bg-white lg:shadow-card lg:rounded-2xl lg:clamp-[px,16px,30px] lg:clamp-[py,20px,30px] max-lg:pl-4 max-lg:pb-4">
+                                                                <ul class="grid grid-cols-2 lg:clamp-[gap,12px,16px] max-lg:grid-cols-1 max-lg:px-4 max-lg:border-l max-lg:border-dark/10">
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Panel Değişimi" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Panel Değişimi</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="Kırık Ekran TV Değişimi" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">Kırık Ekran TV Değişimi</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV LED Değişimi" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV LED Değişimi</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Led ve Reflektör Değişimi" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Led ve Reflektör Değişimi</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Anakart Tamiri" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Anakart Tamiri</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Güç Kartı Tamiri" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Güç Kartı Tamiri</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Görüntü Sorunları Çözümleri" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Görüntü Sorunları Çözümleri</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="Smart TV Yazılım / Güncelleme" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">Smart TV Yazılım / Güncelleme</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Kurulum ve Duvar Montajı" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Kurulum ve Duvar Montajı</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="Uydu ve Kanal Ayarı" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">Uydu ve Kanal Ayarı</span>
+                                                                            </a>
+                                                                        </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                    </li>
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === 1 }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="services.html" data-has-sub-menu class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === 1 ? -1 : 1;;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === 1 ? -1 : 1;">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">TV Arızaları</span>
+                                                <i class="icon-angle-down text-[9px] h-2.25 text-dark transition-all duration-300 lg:group-hover/i:text-primary group-toggle/i:text-primary group-toggle/i:scale-y-[-1] max-lg:hidden!"></i>
+                                        </a>
+                                            <div class="lg:hidden size-7.5 border border-dark/10 rounded-full flex-center"
+                                                @click="$store.data.activeIndex = $store.data.activeIndex === 1 ? -1 : 1;">
+                                                <i class="icon-angle-down text-[12px] h-3 text-dark transition-transform duration-300 group-toggle/i:scale-y-[-1]"></i>
+                                            </div>
+                                            <div x-show="(!$store.data.isDesktop && $store.data.activeIndex === 1) || $store.data.isDesktop" x-collapse.duration.300ms class="lg:absolute lg:left-1/2 lg:top-full lg:-translate-x-1/2 lg:w-max max-lg:w-full">
+                                                <div x-show="($store.data.isDesktop && $store.data.activeIndex === 1) || !$store.data.isDesktop" x-transition.duration.300ms class="mt-2">
+                                                        <div class="w-full max-w-700">
+                                                            <div class="w-full lg:bg-white lg:shadow-card lg:rounded-2xl lg:clamp-[px,16px,30px] lg:clamp-[py,20px,30px] max-lg:pl-4 max-lg:pb-4">
+                                                                <ul class="grid grid-cols-2 lg:clamp-[gap,12px,16px] max-lg:grid-cols-1 max-lg:px-4 max-lg:border-l max-lg:border-dark/10">
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="Ses Var Görüntü Yok TV Tamiri" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">Ses Var Görüntü Yok TV Tamiri</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Mavi Ekran Sorunu" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Mavi Ekran Sorunu</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Ekranında Lekeler / Parlamalar" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Ekranında Lekeler / Parlamalar</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Karanlık Gösteriyor" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Karanlık Gösteriyor</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Açılıyor Ama Görüntü Gelmiyor" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Açılıyor Ama Görüntü Gelmiyor</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Ekran Çatladı Ne Yapılmalı?" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Ekran Çatladı Ne Yapılmalı?</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV’de Dikey / Yatay Çizgi Sorunu" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV’de Dikey / Yatay Çizgi Sorunu</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV’de Işık Var Görüntü Yok" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV’de Işık Var Görüntü Yok</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV Kapanıp Açılıyor Sorunu" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV Kapanıp Açılıyor Sorunu</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="service-detail.html" title="TV HDMI Görmüyor Sorunu" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="assets/image/header/icon-2.svg" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">TV HDMI Görmüyor Sorunu</span>
+                                                                            </a>
+                                                                        </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                    </li>
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === 2 }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="brands.html" data-has-sub-menu class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === 2 ? -1 : 2;;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === 2 ? -1 : 2;">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">Markalara Göre</span>
+                                                <i class="icon-angle-down text-[9px] h-2.25 text-dark transition-all duration-300 lg:group-hover/i:text-primary group-toggle/i:text-primary group-toggle/i:scale-y-[-1] max-lg:hidden!"></i>
+                                        </a>
+                                            <div class="lg:hidden size-7.5 border border-dark/10 rounded-full flex-center"
+                                                @click="$store.data.activeIndex = $store.data.activeIndex === 2 ? -1 : 2;">
+                                                <i class="icon-angle-down text-[12px] h-3 text-dark transition-transform duration-300 group-toggle/i:scale-y-[-1]"></i>
+                                            </div>
+                                            <div x-show="(!$store.data.isDesktop && $store.data.activeIndex === 2) || $store.data.isDesktop" x-collapse.duration.300ms class="lg:absolute lg:left-1/2 lg:top-full lg:-translate-x-1/2 lg:w-max max-lg:w-full">
+                                                <div x-show="($store.data.isDesktop && $store.data.activeIndex === 2) || !$store.data.isDesktop" x-transition.duration.300ms class="mt-2">
+                                                        <div class="w-full max-w-263">
+                                                            <div class="w-full lg:bg-white lg:shadow-card lg:rounded-2xl lg:clamp-[px,16px,30px] lg:clamp-[py,20px,30px]">
+                                                                <ul class="grid grid-cols-4 clamp-[gap,12px,24px] max-lg:grid-cols-2 max-lg:p-4 max-lg:pr-0"
+                                                                    data-brands-grid
+                                                                    data-brands-layout="header"
+                                                                    data-brands-src="assets/index-brands.json">
+                                                                    <li class="col-span-full text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text text-center">Markalar yükleniyor...</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                                                                    </div>
+                                            </div>
+                                    </li>
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === 3 }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="locations.html"  class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === 3 ? -1 : 3;;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === 3 ? -1 : 3;">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">Hizmet Bölgeleri</span>
+                                        </a>
+                                    </li>
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === 4 }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="#" data-has-sub-menu class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === 4 ? -1 : 4;;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === 4 ? -1 : 4;">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">Panelix</span>
+                                                <i class="icon-angle-down text-[9px] h-2.25 text-dark transition-all duration-300 lg:group-hover/i:text-primary group-toggle/i:text-primary group-toggle/i:scale-y-[-1] max-lg:hidden!"></i>
+                                        </a>
+                                            <div class="lg:hidden size-7.5 border border-dark/10 rounded-full flex-center"
+                                                @click="$store.data.activeIndex = $store.data.activeIndex === 4 ? -1 : 4;">
+                                                <i class="icon-angle-down text-[12px] h-3 text-dark transition-transform duration-300 group-toggle/i:scale-y-[-1]"></i>
+                                            </div>
+                                            <div x-show="(!$store.data.isDesktop && $store.data.activeIndex === 4) || $store.data.isDesktop" x-collapse.duration.300ms class="lg:absolute lg:left-1/2 lg:top-full lg:-translate-x-1/2 lg:w-max max-lg:w-full">
+                                                <div x-show="($store.data.isDesktop && $store.data.activeIndex === 4) || !$store.data.isDesktop" x-transition.duration.300ms class="mt-2">
+                                                        <div class="w-full max-w-700">
+                                                            <div class="w-full lg:bg-white lg:shadow-card lg:rounded-2xl lg:clamp-[px,16px,30px] lg:clamp-[py,20px,30px] max-lg:pl-4 max-lg:pb-4">
+                                                                <ul class="grid grid-cols-2 lg:clamp-[gap,12px,16px] max-lg:grid-cols-1 max-lg:px-4 max-lg:border-l max-lg:border-dark/10">
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="about-us.html" title="Hakkımızda" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">Hakkımızda</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="blog.html" title="Blog" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">Blog</span>
+                                                                            </a>
+                                                                        </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                    </li>
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === 5 }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="contact.html"  class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === 5 ? -1 : 5;;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === 5 ? -1 : 5;">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">İletişim</span>
+                                        </a>
+                                    </li>
+                            </ul>
+                        </nav>
+                    </div>
+                        <a href="tel:+905350577188" title="Bizi Hemen Ara"  class="group/btn bg-primary md:hover:bg-secondary inline-flex items-center justify-center gap-2.5 clamp-[px,24px,32px] clamp-[py,12px,18px] rounded-xl min-w-max relative transition-colors duration-300 [[disabled]]:opacity-50 [[disabled]]:pointer-events-none max-xs:w-full max-lg:[&amp;_i]:hidden! max-lg:px-4 max-lg:py-2 max-lg:rounded-lg">
+                            <span class="text-white clamp-[text,16px,18px] leading-tight font-medium tracking-[-0.18px] transition-colors duration-300">Bizi Hemen Ara</span>
+                                <i class="icon-phone text-white clamp-[text,16px,18px] clamp-[h,16px,18px] transition-colors duration-300"></i>
+                        </a>
+                    <button type="button" class="lg:hidden w-10 h-11 px-1" @click="$store.data.menuOpen = !$store.data.menuOpen">
+                        <span class="size-full flex-center flex-col gap-1.5 relative">
+                            <span class="block w-full h-0.5 bg-primary rounded-1 transition-transform duration-300" :class="{ 'rotate-45 translate-y-2': $store.data.menuOpen }"></span>
+                            <span class="block w-full h-0.5 bg-primary rounded-1 transition-opacity duration-300" :class="{ 'opacity-0': $store.data.menuOpen }"></span>
+                            <span class="block w-full h-0.5 bg-primary rounded-1 transition-transform duration-300" :class="{ '-rotate-45 -translate-y-2': $store.data.menuOpen }"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            <ul class="inline-block text-body text-text lg:*:transition-colors lg:*:duration-300 lg:*:hover:text-dark *:last:text-dark [&_li+li]:before:content-['/'] [&_li+li]:before:mx-2">
+                    <li class="inline">
+                        <a href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="inline">
+                        <a href="services.html">Hizmetlerimiz</a>
+                    </li>
+            </ul>        </div>
+    </div>
+    <div data-module style="--min-pt: ; --max-pt: ; --min-pb: ; --max-pb: ; --min-w: 768; --max-w: 1600">
+        <div class="border-b border-dark/10 clamp-[py,30px,50px]">
+            <div class="container">
+                <div class="w-full max-w-233.75 flex flex-col clamp-[gap,20px,33px]">
+                    <h1 class="text-h1 text-dark">TV Panel, Ekran ve LED Arızalarında Profesyonel Servis Çözümleri</h1>
+                    <p class="text-body text-text">Panelix olarak TV panel değişimi, kırık ekran değişimi, LED arızaları, reflektör sorunları ve görüntü problemlerine yönelik profesyonel teknik servis hizmetleri sunuyoruz. İstanbul genelinde, marka ve model fark etmeksizin uygun çözüm için destek sağlıyoruz.</p>
+                    <div class="lg:max-w-[80%] flex clamp-[gap,10px,20px] *:w-full max-xs:flex-col">
+                            <a href="https://wa.me/+905350577188" title="WhatsApp’tan Bilgi Al"  class="group/btn bg-[#25D366] md:hover:bg-[#19b351] inline-flex items-center justify-center gap-2.5 clamp-[px,24px,32px] clamp-[py,12px,18px] rounded-xl min-w-max relative transition-colors duration-300 [[disabled]]:opacity-50 [[disabled]]:pointer-events-none max-xs:w-full ">
+                                <span class="text-dark md:group-hover/btn:text-white clamp-[text,16px,18px] leading-tight font-medium tracking-[-0.18px] transition-colors duration-300">WhatsApp’tan Bilgi Al</span>
+                                    <i class="icon-whatsapp text-dark md:group-hover/btn:text-white clamp-[text,16px,18px] clamp-[h,16px,18px] transition-colors duration-300"></i>
+                            </a>
+                            <a href="tel:+905350577188" title="Hemen Ara"  class="group/btn bg-primary md:hover:bg-secondary inline-flex items-center justify-center gap-2.5 clamp-[px,24px,32px] clamp-[py,12px,18px] rounded-xl min-w-max relative transition-colors duration-300 [[disabled]]:opacity-50 [[disabled]]:pointer-events-none max-xs:w-full ">
+                                <span class="text-white clamp-[text,16px,18px] leading-tight font-medium tracking-[-0.18px] transition-colors duration-300">Hemen Ara</span>
+                                    <i class="icon-phone text-white clamp-[text,16px,18px] clamp-[h,16px,18px] transition-colors duration-300"></i>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <section data-module style="--min-pt: 50; --max-pt: 50; --min-pb: 50; --max-pb: 80; --min-w: 768; --max-w: 1600">
+        <div class="container">
+            <div class="grid grid-cols-4 clamp-[gap,16px,24px] max-lg:grid-cols-2 max-md:grid-cols-1">
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-5.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">TV Panel Değişimi</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-6.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">Kırık Ekran TV Değişimi</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-7.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">TV LED Değişimi</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-8.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">TV Anakart Tamiri</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-5.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">LED ve Reflektör Değişimi</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-6.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">Ses Var Görüntü Yok</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-7.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">Mavi Ekran Sorunu</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-8.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">TV Anakart Tamiri</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-5.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">TV Görüntü Problemleri</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-6.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">Smart TV Yazılım Sorunları</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-7.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">TV Kurulum ve Montaj</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                        <div>
+                            <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                                <img src="assets/image/index/icon-8.svg" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                            </div>
+                            <h3 class="mb-3">
+                                <a href="service-detail.html" class="inline-block lg:*:hover:text-secondary">
+                                    <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">Uydu ve Kanal Ayarı</span>
+                                </a>
+                            </h3>
+                            <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.</p>
+                        </div>
+                        <a href="service-detail.html" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                            <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                            <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </section>    <section data-module style="--min-pt: ; --max-pt: ; --min-pb: 50; --max-pb: 80; --min-w: 768; --max-w: 1600">
+        <div class="container">
+            <div class="bg-fixed bg-no-repeat bg-center bg-cover clamp-[px,20px,80px] clamp-[py,30px,60px] rounded-xl relative overflow-hidden" style="background-image: url('assets/image/cta.jpg')">
+                <div class="absolute-full bg-black/60"></div>
+                <div class="w-full max-w-2xl relative z-2">
+                    <div class="clamp-[mb,30px,50px]">
+                        <h2 class="text-h3 text-white mb-5">Hangi hizmetin sizin arızanıza uygun olduğundan emin değil misiniz?</h2>
+                        <p class="text-body text-white">TV’nizdeki sorunu bize WhatsApp üzerinden iletin, sizi doğru hizmete yönlendirelim.</p>
+                    </div>
+                    <div class="flex clamp-[gap,10px,20px] *:w-full max-xs:flex-col">
+                            <a href="https://wa.me/+905350577188" title="WhatsApp’tan Bilgi Al"  class="group/btn bg-[#25D366] md:hover:bg-[#19b351] inline-flex items-center justify-center gap-2.5 clamp-[px,24px,32px] clamp-[py,12px,18px] rounded-xl min-w-max relative transition-colors duration-300 [[disabled]]:opacity-50 [[disabled]]:pointer-events-none max-xs:w-full ">
+                                <span class="text-dark md:group-hover/btn:text-white clamp-[text,16px,18px] leading-tight font-medium tracking-[-0.18px] transition-colors duration-300">WhatsApp’tan Bilgi Al</span>
+                                    <i class="icon-whatsapp text-dark md:group-hover/btn:text-white clamp-[text,16px,18px] clamp-[h,16px,18px] transition-colors duration-300"></i>
+                            </a>
+                            <a href="tel:+905350577188" title="Hemen Ara"  class="group/btn bg-primary md:hover:bg-secondary inline-flex items-center justify-center gap-2.5 clamp-[px,24px,32px] clamp-[py,12px,18px] rounded-xl min-w-max relative transition-colors duration-300 [[disabled]]:opacity-50 [[disabled]]:pointer-events-none max-xs:w-full ">
+                                <span class="text-white clamp-[text,16px,18px] leading-tight font-medium tracking-[-0.18px] transition-colors duration-300">Hemen Ara</span>
+                                    <i class="icon-phone text-white clamp-[text,16px,18px] clamp-[h,16px,18px] transition-colors duration-300"></i>
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <section data-module style="--min-pt: ; --max-pt: ; --min-pb: 50; --max-pb: 80; --min-w: 768; --max-w: 1600">
+        <div class="container">
+            <div class="grid grid-cols-12 max-lg:grid-cols-1">
+                <div class="col-span-1 max-lg:hidden"></div>
+                <div class="lg:col-span-10">
+                    <article class="editor"><h2>Televizyon Arızalarında Profesyonel Hizmet Çözümleri</h2><p>Panelix olarak televizyonlarda en sık karşılaşılan panel, ekran, led ve görüntü arızalarına yönelik profesyonel teknik servis hizmetleri sunuyoruz. TV panel değişimi, kırık ekran değişimi, led ve reflektör işlemleri, görüntü sorunları ve farklı teknik arızalarda marka ve model fark etmeksizin çözüm üretiyoruz.<p><h3>İstanbul Genelinde Servis Desteği</h3><p>Bakırköy merkezli servis yapımızla İstanbul’un birçok ilçesine destek sağlıyor, özellikle panel değişimi, led arızası ve ekran problemlerinde uygun servis planlamasıyla hizmet veriyoruz.</p>  <h3>Doğru Hizmete Hızlı Ulaşın</h3><p>Televizyonunuzdaki arızanın hangi hizmet kapsamına girdiğinden emin değilseniz, bizimle iletişime geçerek ön bilgi alabilirsiniz. Uzman ekibimiz arıza belirtilerine göre sizi doğru işlem sürecine yönlendirir.</p></article>
+                </div>
+                <div class="col-span-1 max-lg:hidden"></div>
+            </div>
+        </div>
+    </section>    <section data-module style="--min-pt: ; --max-pt: ; --min-pb: 50; --max-pb: 100; --min-w: 768; --max-w: 1600">
+        <div class="container">
+            <div class="grid grid-cols-12 max-lg:grid-cols-1">
+                <div class="col-span-1 max-lg:hidden"></div>
+                <div class="lg:col-span-10">
+                    <div x-data="{ activeIndex: -1 }" class="flex flex-col clamp-[gap,16px,20px]">
+                            <div class="bg-white/95 border border-dark/10 rounded-2xl transition-colors duration-300 md:hover:border-secondary" :class="{ 'border-secondary! bg-white!': activeIndex === 0 }">
+                                <div class="clamp-[px,16px,32px] clamp-[py,20px,24px] flex items-center justify-between gap-4 cursor-pointer" @click="activeIndex = activeIndex === 0 ? -1 : 0">
+                                    <h3 class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-dark">Panel Değişimi Ne Zaman Gerekir?</h3>
+                                    <i class="icon-angle-down text-[16px] h-4 transition-transform duration-300" :class="{ 'scale-y-[-1]': activeIndex === 0 }"></i>
+                                </div>
+                                <div x-show="activeIndex === 0" x-collapse.duration.300ms>
+                                    <div class="clamp-[px,16px,32px] clamp-[pb,20px,24px]">
+                                        <p class="text-body text-text">Televizyonunuzun ekranında renk bozulmaları, çizgiler veya görüntü kaybı gibi sorunlar varsa panel değişimi gerekebilir. Uzman ekibimiz arızanın panel kaynaklı olup olmadığını değerlendirerek size en uygun çözümü sunar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/95 border border-dark/10 rounded-2xl transition-colors duration-300 md:hover:border-secondary" :class="{ 'border-secondary! bg-white!': activeIndex === 1 }">
+                                <div class="clamp-[px,16px,32px] clamp-[py,20px,24px] flex items-center justify-between gap-4 cursor-pointer" @click="activeIndex = activeIndex === 1 ? -1 : 1">
+                                    <h3 class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-dark">Kırık Ekran Değişimi Nasıl Yapılır?</h3>
+                                    <i class="icon-angle-down text-[16px] h-4 transition-transform duration-300" :class="{ 'scale-y-[-1]': activeIndex === 1 }"></i>
+                                </div>
+                                <div x-show="activeIndex === 1" x-collapse.duration.300ms>
+                                    <div class="clamp-[px,16px,32px] clamp-[pb,20px,24px]">
+                                        <p class="text-body text-text">Kırık ekran değişimi, televizyonunuzun modeline ve ekran boyutuna göre özel ekipman ve teknik bilgi gerektirir. Panelix olarak, deneyimli teknisyenlerimizle hızlı ve güvenilir kırık ekran değişimi hizmeti sunuyoruz.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/95 border border-dark/10 rounded-2xl transition-colors duration-300 md:hover:border-secondary" :class="{ 'border-secondary! bg-white!': activeIndex === 2 }">
+                                <div class="clamp-[px,16px,32px] clamp-[py,20px,24px] flex items-center justify-between gap-4 cursor-pointer" @click="activeIndex = activeIndex === 2 ? -1 : 2">
+                                    <h3 class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-dark">LED Arızaları Nasıl Anlaşılır?</h3>
+                                    <i class="icon-angle-down text-[16px] h-4 transition-transform duration-300" :class="{ 'scale-y-[-1]': activeIndex === 2 }"></i>
+                                </div>
+                                <div x-show="activeIndex === 2" x-collapse.duration.300ms>
+                                    <div class="clamp-[px,16px,32px] clamp-[pb,20px,24px]">
+                                        <p class="text-body text-text">LED arızaları genellikle ekranın belirli bölgelerinde kararma, renk bozulması veya görüntü kaybı şeklinde kendini gösterir. Uzman ekibimiz LED arızalarını tespit ederek uygun onarım veya değişim işlemi gerçekleştirir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/95 border border-dark/10 rounded-2xl transition-colors duration-300 md:hover:border-secondary" :class="{ 'border-secondary! bg-white!': activeIndex === 3 }">
+                                <div class="clamp-[px,16px,32px] clamp-[py,20px,24px] flex items-center justify-between gap-4 cursor-pointer" @click="activeIndex = activeIndex === 3 ? -1 : 3">
+                                    <h3 class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-dark">Reflektör Sorunları Nedir?</h3>
+                                    <i class="icon-angle-down text-[16px] h-4 transition-transform duration-300" :class="{ 'scale-y-[-1]': activeIndex === 3 }"></i>
+                                </div>
+                                <div x-show="activeIndex === 3" x-collapse.duration.300ms>
+                                    <div class="clamp-[px,16px,32px] clamp-[pb,20px,24px]">
+                                        <p class="text-body text-text">Reflektör sorunları, televizyonunuzun ışık yansıtma sistemindeki arızalardır ve genellikle görüntü kalitesinde düşüşe neden olur. Panelix olarak reflektör sorunlarını tespit edip gerekli tamirat veya değişim işlemlerini yaparak görüntü kalitenizi eski haline getiriyoruz.</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-span-1 max-lg:hidden"></div>
+            </div>
+        </div>
+    </section></main>
+
+<footer>
+    <div class="bg-primary clamp-[pt,50px,100px] pb-12.5">
+        <div class="container">
+            <div class="grid grid-cols-[auto_1fr_1fr_1fr] clamp-[gap,24px,50px] max-lg:grid-cols-3 max-md:grid-cols-2">
+                <div class="lg:clamp-[w,350px,524px] flex flex-col gap-6 max-lg:col-span-full">
+                    <img src="assets/image/logo-white.svg" alt="" loading="lazy" width="227" height="76" class="clamp-[w,150px,227px] h-auto">
+                    <p class="text-body text-white/80 mt-2.5">İstanbul genelinde TV panel değişimi, kırık ekran değişimi, LED arızası ve görüntü problemlerine profesyonel teknik servis çözümleri sunuyoruz.</p>
+                    <p class="text-body text-white/80">Çalışma Saatleri: 09:00 – 19:00 <br>İstanbul Geneli Hizmet</p>
+                    <ul class="flex flex-wrap clamp-[gap,9px,14px]">
+                            <li>
+                                <a href="https://www.facebook.com" title="Facebook&#x27;ta takip et" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="icon-facebook text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com" title="Instagram&#x27;da takip et" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="icon-instagram text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.x.com" title="x&#x27;te takip et" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="icon-x text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com" title="LinkedIn&#x27;da takip et" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="icon-linkedin text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com" title="Youtube&#x27;da takip et" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="icon-youtube text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com" title="Tiktok&#x27;ta takip et" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="icon-tiktok text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                    </ul>
+                        <a href="https://wa.me/+905350577188" title="WhatsApp ile Ulaşın"  class="group/btn bg-[#25D366] md:hover:bg-[#19b351] inline-flex items-center justify-center gap-2.5 clamp-[px,24px,32px] clamp-[py,12px,18px] rounded-xl min-w-max relative transition-colors duration-300 [[disabled]]:opacity-50 [[disabled]]:pointer-events-none max-xs:w-full lg:clamp-[w,240px,320px]">
+                            <span class="text-dark md:group-hover/btn:text-white clamp-[text,16px,18px] leading-tight font-medium tracking-[-0.18px] transition-colors duration-300">WhatsApp ile Ulaşın</span>
+                                <i class="icon-whatsapp text-dark md:group-hover/btn:text-white clamp-[text,16px,18px] clamp-[h,16px,18px] transition-colors duration-300"></i>
+                        </a>
+                </div>
+                    <div>
+                        <p class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-white mb-5">Hızlı Bağlantılar</p>
+                        <ul class="border-l border-white/10 clamp-[pl,16px,24px]">
+                                <li>
+                                    <a href="index.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Anasayfa</a>
+                                </li>
+                                <li>
+                                    <a href="services.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Hakkımızda</a>
+                                </li>
+                                <li>
+                                    <a href="services.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Hizmetlerimiz</a>
+                                </li>
+                                <li>
+                                    <a href="locations.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Hizmet Bölgeleri</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">İletişim</a>
+                                </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-white mb-5">Hizmetler</p>
+                        <ul class="border-l border-white/10 clamp-[pl,16px,24px]">
+                                <li>
+                                    <a href="service-detail.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">TV Panel Değişimi</a>
+                                </li>
+                                <li>
+                                    <a href="service-detail.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Kırık Ekran TV Değişimi</a>
+                                </li>
+                                <li>
+                                    <a href="service-detail.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">TV LED Değişimi</a>
+                                </li>
+                                <li>
+                                    <a href="service-detail.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">LED ve Reflektör Değişimi</a>
+                                </li>
+                                <li>
+                                    <a href="service-detail.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Ses Var Görüntü Yok</a>
+                                </li>
+                                <li>
+                                    <a href="service-detail.html" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">Mavi Ekran Sorunu</a>
+                                </li>
+                        </ul>
+                    </div>
+                <div class="max-md:col-span-full">
+                    <p class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-white mb-5">İletişim</p>
+                    <ul class="flex flex-col gap-4">
+                        <li>
+                            <a href="tel:+905350577188" title="0535 057 71 88" class="group/a inline-flex items-center gap-2.5">
+                               <span class="size-7.5 bg-secondary rounded-full flex-center lg:transition-colors lg:duration-300 lg:group-hover/a:bg-white">
+                                   <i class="icon-phone text-[16px] h-4 text-white lg:transition-colors lg:duration-300 lg:group-hover/a:text-dark"></i>
+                               </span>
+                               <span class="text-body font-medium text-white">0535 057 71 88</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/+905350577188" target="_blank" title="Whatsapp'tan İletişime Geç" class="group/a inline-flex items-center gap-2.5">
+                               <span class="size-7.5 bg-[#25D366] rounded-full flex-center lg:transition-colors lg:duration-300 lg:group-hover/a:bg-[#19b351]">
+                                   <i class="icon-whatsapp text-[16px] h-4 text-dark lg:transition-colors lg:duration-300 lg:group-hover/a:text-white"></i>
+                               </span>
+                               <span class="text-body font-medium text-white">0535 057 71 88</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://maps.google.com" class="inline-block text-body text-white/80 lg:transition-colors lg:duration-300 lg:hover:text-white">Sakızağacı, Cevizli Yalı Sk. NO:5/A, 34000 Bakırköy/İstanbul</a>
+                        </li>
+                        <li>
+                            <div class="border border-white/10 p-4 rounded-xl flex flex-col gap-6">
+                                <div class="flex items-center justify-between gap-2">
+                                    <img src="assets/image/index/google.svg" alt="" loading="lazy" width="40" height="41" class="w-5 h-auto">
+                                    <a href="https://www.google.com/maps/place/Bak%C4%B1rk%C3%B6y+Led+Tv+Uydu+Teknik+Servis+(Furkan+Elektronik)/@40.9783555,28.8799314,17z/data=!4m8!3m7!1s0x14cabd82ad2f92df:0x9b973e9e51891f4a!8m2!3d40.9784163!4d28.8813262!9m1!1b1!16s%2Fg%2F11h4pvzcp6?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" title="Google yorumlarını gör" class="block">
+                                        <i class="icon-arrow-up-right text-[16px] h-4 text-white"></i>
+                                    </a>
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <p class="text-[20px] leading-tight font-medium tracking-[-0.2px] text-white">4,9/5</p>
+                                    <p class="text-[14px] leading-[1.6] tracking-[-0.14px] text-white/80">150+ yorum</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-secondary py-5">
+        <div class="container">
+            <div class="flex items-center justify-between gap-4 max-md:flex-col max-md:text-center">
+                <p class="text-body text-white">© 2026 Panelix. Tüm hakları saklıdır.</p>
+                <ul class="flex flex-wrap gap-x-5 gap-y-3.5 list-disc list-inside text-body text-white max-md:justify-center">
+                    <li>
+                        <a href="template.html">KVKK Aydınlatma Metni</a>
+                    </li>
+                    <li>
+                        <a href="template.html">Gizlilik Politikası</a>
+                    </li>
+                    <li>
+                        <a href="template.html">Çerez Politikası</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="fixed z-30 right-0 bottom-0 clamp-[pr,16px,30px] clamp-[pb,16px,30px] flex flex-col gap-6">
+    <a href="tel:+905350577188" title="+905350577188" class="bg-primary clamp-[size,40px,54px] flex-center rounded-full shadow-[0_0_3px_4px_rgba(15,23,42,0.35)] lg:transiton-all lg:duration-300 lg:hover:bg-dark lg:hover:shadow-[0_0_3px_4px_rgba(0,0,0,0.35)]">
+        <i class="icon-phone clamp-[text,18px,24px] clamp-[h,18px,24px] text-white"></i>
+    </a>
+    <a href="https://wa.me/+905350577188" title="Whatsapp ile iletişim kur" target="_blank" class="bg-[#25D366] clamp-[size,40px,54px] flex-center rounded-full shadow-[0_0_3px_4px_rgba(37,211,102,0.35)] lg:transiton-all lg:duration-300 lg:hover:bg-[#1DA851] lg:hover:shadow-[0_0_3px_4px_rgba(30,30,30,0.35)] lg:hover:*:text-white">
+        <i class="icon-whatsapp clamp-[text,18px,24px] clamp-[h,18px,24px] text-dark lg:transition-colors lg:duration-300"></i>
+    </a>
+</div>
+<div class="fixed-full z-50 bg-black/25" x-show="$store.data.menuOpen || $store.data.dropdownMenuOpen" x-transition.opacity.duration.300ms></div>
+<script>
+    (() => {
+        const createOverlayLink = (brand) => {
+            const link = document.createElement("a");
+            link.href = brand.url || "#";
+            link.title = brand.title || "Marka";
+            link.className = "absolute-full block z-2";
+            return link;
+        };
+
+        const createBrandsPageCard = (brand) => {
+            const card = document.createElement("div");
+            card.className = "bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]";
+
+            const top = document.createElement("div");
+
+            const logoWrap = document.createElement("div");
+            logoWrap.className = "clamp-[h,40px,70px] flex items-center mb-5 clamp-[pr,30px,120px]";
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "size-full object-contain object-left";
+            logoWrap.appendChild(logo);
+
+            const title = document.createElement("h3");
+            title.className = "mb-3";
+
+            const titleLink = document.createElement("a");
+            titleLink.href = brand.url || "#";
+            titleLink.className = "inline-block lg:*:hover:text-secondary";
+
+            const titleText = document.createElement("span");
+            titleText.className = "clamp-[text,22px,26px] leading-tight font-medium tracking-[-0.26px] text-dark lg:transition-colors lg:duration-300";
+            titleText.textContent = brand.title || "";
+            titleLink.appendChild(titleText);
+            title.appendChild(titleLink);
+
+            const description = document.createElement("p");
+            description.className = "text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2";
+            description.textContent = brand.description || "";
+
+            top.appendChild(logoWrap);
+            top.appendChild(title);
+            top.appendChild(description);
+
+            const detailLink = document.createElement("a");
+            detailLink.href = brand.url || "#";
+            detailLink.className = "w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary";
+
+            const detailText = document.createElement("span");
+            detailText.className = "text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300";
+            detailText.textContent = "Detaylı İncele";
+
+            const icon = document.createElement("i");
+            icon.className = "icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300";
+
+            detailLink.appendChild(detailText);
+            detailLink.appendChild(icon);
+
+            card.appendChild(top);
+            card.appendChild(detailLink);
+            return card;
+        };
+
+        const createIndexCard = (brand) => {
+            const card = document.createElement("div");
+            card.className = "flex flex-col items-center justify-between gap-2.5 relative rounded-2xl clamp-[p,20px,30px] border border-secondary/0 shadow-[0_9px_16px_-5px_rgba(30,30,30,0.13)] lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10";
+            card.appendChild(createOverlayLink(brand));
+
+            const logoWrap = document.createElement("div");
+            logoWrap.className = "block w-62.5 max-w-[95%] clamp-[h,90px,150px]";
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "full-contain";
+            logoWrap.appendChild(logo);
+
+            const title = document.createElement("h3");
+            title.className = "clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-dark text-center";
+            title.textContent = brand.title || "";
+
+            card.appendChild(logoWrap);
+            card.appendChild(title);
+            return card;
+        };
+
+        const createServiceDetailCard = (brand) => {
+            const card = document.createElement("div");
+            card.className = "clamp-[h,90px,130px] flex-center gap-2.5 relative rounded-2xl clamp-[py,20px,40px] clamp-[px,30px,50px] border border-dark/10 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10";
+            card.appendChild(createOverlayLink(brand));
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "full-contain";
+            card.appendChild(logo);
+
+            return card;
+        };
+
+        const createHeaderCard = (brand) => {
+            const item = document.createElement("li");
+
+            const link = document.createElement("a");
+            link.href = brand.url || "#";
+            link.title = brand.title || "Marka";
+            link.className = "group/s w-full lg:clamp-[h,85px,130px] flex-center border border-dark/10 rounded-xl clamp-[p,20px,40px] lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 max-lg:aspect-video";
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "full-contain";
+
+            link.appendChild(logo);
+            item.appendChild(link);
+            return item;
+        };
+
+        const layoutRenderers = {
+            brands: createBrandsPageCard,
+            index: createIndexCard,
+            "service-detail": createServiceDetailCard,
+            header: createHeaderCard,
+        };
+
+        const showGridState = (grid, text) => {
+            grid.replaceChildren();
+            const isList = grid.tagName === "UL" || grid.tagName === "OL";
+            const state = document.createElement(isList ? "li" : "p");
+            state.className = "col-span-full text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text text-center";
+            state.textContent = text;
+            grid.appendChild(state);
+        };
+
+        const mountBrands = (grid, brands) => {
+            const layout = grid.dataset.brandsLayout || "brands";
+            const createCard = layoutRenderers[layout] || createBrandsPageCard;
+            grid.replaceChildren();
+            if (!brands.length) {
+                showGridState(grid, "Gösterilecek marka bulunamadı.");
+                return;
+            }
+
+            brands.forEach((brand) => {
+                grid.appendChild(createCard(brand));
+            });
+        };
+
+        const requestCache = new Map();
+
+        const fetchBrands = async (url) => {
+            if (!requestCache.has(url)) {
+                requestCache.set(
+                    url,
+                    fetch(url).then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`Brands fetch failed: ${response.status}`);
+                        }
+                        return response.json();
+                    }),
+                );
+            }
+
+            return requestCache.get(url);
+        };
+
+        const initBrands = async () => {
+            const grids = Array.from(document.querySelectorAll("[data-brands-grid]"));
+            if (!grids.length) {
+                return;
+            }
+
+            await Promise.all(
+                grids.map(async (grid) => {
+                    const dataUrl = grid.dataset.brandsSrc || "assets/brands.json";
+                    try {
+                        const data = await fetchBrands(dataUrl);
+                        const brands = Array.isArray(data.brands) ? data.brands : [];
+                        mountBrands(grid, brands);
+                    } catch (error) {
+                        console.error(error);
+                        showGridState(grid, "Markalar yüklenemedi.");
+                    }
+                }),
+            );
+        };
+
+        initBrands();
+    })();
+</script>
+</body>
+</html>

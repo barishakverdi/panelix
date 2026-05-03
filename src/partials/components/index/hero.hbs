@@ -1,0 +1,43 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="grid grid-cols-12 gap-6 max-lg:grid-cols-1">
+            <div class="lg:col-span-5 lg:clamp-[py,24px,44px]">
+                <div class="flex flex-col clamp-[gap,16px,33px]">
+                    <h1 class="text-h1 text-dark *:text-secondary">İstanbul <span>TV Panel Değişimi</span> ve LED Arıza Servisi</h1>
+                    <div class="w-fit bg-secondary inline-flex items-center clamp-[gap,16px,24px] px-6 py-3 rounded-4xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none" class="clamp-[w,20px,24px] h-auto">
+                            <path d="M2.66667 1.96875C2.3 1.96875 2 2.26406 2 2.625V13.125C2 13.4859 2.3 13.7812 2.66667 13.7812H21.3333C21.7 13.7812 22 13.4859 22 13.125V2.625C22 2.26406 21.7 1.96875 21.3333 1.96875H2.66667ZM0 2.625C0 1.17715 1.19583 0 2.66667 0H21.3333C22.8042 0 24 1.17715 24 2.625V13.125C24 14.5729 22.8042 15.75 21.3333 15.75H2.66667C1.19583 15.75 0 14.5729 0 13.125V2.625ZM6.33333 17.7188H17.6667C18.2208 17.7188 18.6667 18.1576 18.6667 18.7031C18.6667 19.2486 18.2208 19.6875 17.6667 19.6875H6.33333C5.77917 19.6875 5.33333 19.2486 5.33333 18.7031C5.33333 18.1576 5.77917 17.7188 6.33333 17.7188Z" fill="white"></path>
+                        </svg>
+                        <span class="clamp-[text,16px,20px] leading-tight font-medium tracking-[-0.2px] text-white">İstanbul geneli hizmet · uygun süreçlerde ikame TV</span>
+                    </div>
+                    <p class="text-body *:font-semibold">Kırık ekran, ses var görüntü yok, mavi ekran, led arızası ve panel değişimi işlemlerinde hızlı, garantili ve profesyonel çözümler sunuyoruz. <strong>İstanbul’un tüm semtlerine hizmet veriyoruz.</strong></p>
+                    <div class="flex flex-wrap clamp-[gap,12px,16px]">
+                        {{#each index.hero as |item|}}
+                            <div class="bg-white px-4 clamp-[py,12px,16px] rounded-xl inline-flex items-center clamp-[gap,12px,16px]">
+                                <img src="{{item.icon}}" alt="" loading="eager" width="20" height="18" class="clamp-[w,18px,20px] h-auto">
+                                <span class="text-[16px] font-medium leading-tight tracking-[-0.16px] text-dark">{{item.title}}</span>
+                            </div>
+                        {{/each}}
+                    </div>
+                    <div class="flex clamp-[gap,10px,20px] *:w-full max-xs:flex-col">
+                        {{> partials/components/button.hbs
+                            text="Whatsapp’tan Fiyat Sor"
+                            icon="icon-whatsapp"
+                            url="https://wa.me/+905350577188"
+                            color="whatsapp"
+                        }}
+                        {{> partials/components/button.hbs
+                            text="Hemen Ara"
+                            icon="icon-phone"
+                            url="tel:+905350577188"
+                            color="primary"
+                        }}
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7 clamp-[pl,0px,81px]">
+                <img src="assets/image/index/image-1.jpg" alt="" loading="eager" width="854" height="604" class="full-cover rounded-xl">
+            </div>
+        </div>
+    </div>
+</section>

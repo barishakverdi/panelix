@@ -1,0 +1,25 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="grid grid-cols-4 clamp-[gap,16px,24px] max-lg:grid-cols-2 max-md:grid-cols-1">
+            {{#each services as |item|}}
+                <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]">
+                    <div>
+                        <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                            <img src="{{item.icon}}" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                        </div>
+                        <h3 class="mb-3">
+                            <a href="{{item.url}}" class="inline-block lg:*:hover:text-secondary">
+                                <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">{{item.title}}</span>
+                            </a>
+                        </h3>
+                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">{{item.description}}</p>
+                    </div>
+                    <a href="{{item.url}}" class="w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                        <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                        <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

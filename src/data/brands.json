@@ -1,0 +1,77 @@
+{
+    "brands": [
+        {
+            "title": "Samsung TV Servisi",
+            "description": "Samsung televizyonlarda panel, ekran, LED ve görüntü arızalarına yönelik teknik servis desteği sunuyoruz.",
+            "logo": "assets/image/index/logo-1.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "LG TV Servisi",
+            "description": "LG marka TV'lerde panel değişimi, LED arızası ve görüntü problemleri için profesyonel destek sağlıyoruz.",
+            "logo": "assets/image/index/logo-2.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Vestel TV Servisi",
+            "description": "Vestel televizyonlarda panel, ekran ve görüntü arızalarında hızlı ve güvenilir servis desteği veriyoruz.",
+            "logo": "assets/image/index/logo-3.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Philips TV Servisi",
+            "description": "Philips TV'lerde panel, LED ve reflektör kaynaklı arızalarda teknik servis hizmeti sunuyoruz.",
+            "logo": "assets/image/index/logo-4.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Sony TV Servisi",
+            "description": "Sony televizyonlarda ekran, panel ve görüntü sorunlarına yönelik uzman destek sağlıyoruz.",
+            "logo": "assets/image/index/logo-5.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "TCL TV Servisi",
+            "description": "TCL marka TV'lerde panel değişimi ve görüntü problemleri için uygun servis çözümleri sunuyoruz.",
+            "logo": "assets/image/index/logo-6.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Arçelik TV Servisi",
+            "description": "Arçelik televizyonlarda panel, LED ve görüntü arızalarında teknik servis desteği veriyoruz.",
+            "logo": "assets/image/index/logo-7.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Beko TV Servisi",
+            "description": "Beko TV'lerde ekran, panel ve LED kaynaklı arızalar için profesyonel servis sunuyoruz.",
+            "logo": "assets/image/index/logo-8.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Toshiba TV Servisi",
+            "description": "Toshiba marka televizyonlarda panel ve görüntü arızalarında teknik servis desteği sağlıyoruz.",
+            "logo": "assets/image/index/logo-9.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Onvo TV Servisi",
+            "description": "Onvo televizyonlarda ekran ve LED arızalarına yönelik güvenilir servis çözümleri sunuyoruz.",
+            "logo": "assets/image/index/logo-10.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Sunny TV Servisi",
+            "description": "Sunny TV'lerde panel, görüntü ve LED problemleri için uzman teknik destek veriyoruz.",
+            "logo": "assets/image/index/logo-11.png",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Axen TV Servisi",
+            "description": "Axen televizyonlarda panel değişimi ve görüntü arızaları için servis desteği sağlıyoruz.",
+            "logo": "assets/image/index/logo-12.png",
+            "url": "service-detail.html"
+        }
+    ]
+}
+

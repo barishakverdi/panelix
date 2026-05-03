@@ -1,0 +1,28 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="bg-primary clamp-[py,50px,100px]">
+        <div class="container">
+            <div class="flex flex-col gap-6 clamp-[mb,24px,50px]">
+                <div class="w-fit bg-white/10 inline-flex items-center clamp-[gap,16px,24px] px-6 py-3 rounded-4xl">
+                    <i class="icon-panelix clamp-[text,18px,20px] h-[clamp,18px,20px] text-white"></i>
+                    <span class="clamp-[text,16px,20px] leading-tight font-medium tracking-[-0.2px] text-white">Hizmetlerimiz</span>
+                </div>
+                <h2 class="text-h2 text-white *:text-secondary">TV’niz İçin Neler Sağlıyoruz?</h2>
+            </div>
+            <div class="grid grid-cols-4 clamp-[gap,16px,24px] max-lg:grid-cols-2 max-md:grid-cols-1">
+                {{#each index.services as |item|}}
+                    <div class="bg-light/10 border border-white/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px]">
+                        <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-5">
+                            <img src="{{item.icon}}" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                        </div>
+                        <h3 class="mb-3">
+                            <a href="{{item.url}}" class="inline-block lg:*:hover:text-secondary">
+                                <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-white lg:transition-colors lg:duration-300">{{item.title}}</span>
+                            </a>
+                        </h3>
+                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-white">{{item.description}}</p>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

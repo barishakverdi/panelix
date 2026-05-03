@@ -1,0 +1,42 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="Markalar" url="brands.html")
+                )
+            }}
+        </div>
+    </div>
+    {{> partials/components/hero.hbs
+        title="Servis Verdiğimiz TV Markaları"
+        description="Panelix olarak Samsung, LG, Vestel, Philips, Sony, TCL, Arçelik, Beko ve daha birçok televizyon markasına panel değişimi, ekran tamiri, LED arızası ve görüntü problemlerinde teknik servis desteği sunuyoruz."
+    }}
+    {{> partials/components/brands.hbs
+        minPt=50 maxPt=50 minPb=50 maxPb=80
+    }}
+    {{> partials/components/cta.hbs
+        title="Televizyonunuzun markasına uygun servisi mi arıyorsunuz?"
+        description="Marka ve model bilgisiyle bize WhatsApp’tan yazın, arızanıza uygun çözüm için sizi yönlendirelim."
+        minPb=50 maxPb=80
+    }}
+    {{> partials/components/seo.hbs
+        editor="<h2>Markalara Özel TV Servis Çözümleri</h2><p>Panelix olarak farklı televizyon markalarında görülen panel, ekran ve görüntü arızalarına yönelik teknik servis desteği sunuyoruz. Samsung, LG, Vestel, Philips, Sony, TCL, Arçelik ve Beko başta olmak üzere pek çok marka için arıza tespiti ve uygun çözüm planlaması yapıyoruz.</p><h3>Marka ve Model Bazlı Değerlendirme</h3><p>Her televizyon markasının teknik yapısı ve arıza süreci farklı olabilir. Bu nedenle marka ve model bilgisi doğrultusunda doğru servis planı oluşturuyor, süreci şeffaf ve kontrollü şekilde yönetiyoruz.</p><h3>İstanbul Genelinde Servis Desteği</h3><p>Bakırköy merkezli servis yapımızla İstanbul’un birçok ilçesinde marka fark etmeksizin servis hizmeti sağlıyoruz. Dilerseniz WhatsApp üzerinden hızlı ön bilgi alabilirsiniz.</p>"
+        minPb=50 maxPb=80
+    }}
+    {{> partials/components/faq.hbs
+        minPb=50 maxPb=100
+        array=(array
+            (object title="Hangi TV markalarına servis veriyorsunuz?" description="Samsung, LG, Vestel, Philips, Sony, TCL, Arçelik, Beko ve birçok marka için teknik servis desteği sunuyoruz.")
+            (object title="Her marka için panel değişimi yapılıyor mu?" description="Panel değişimi, marka ve modele göre değerlendirilir. Uygunluk ve parça tedariki için ön inceleme yapılır.")
+            (object title="Marka bazlı servis süreci değişir mi?" description="Her markanın teknik yapısı farklı olduğundan arıza tespiti ve işlem planı marka/model bilgisine göre belirlenir.")
+            (object title="İstanbul genelinde hizmet veriyor musunuz?" description="Bakırköy merkezli servis yapımızla İstanbul’un birçok ilçesinde servis hizmeti sağlıyoruz.")
+        )
+    }}
+</main>
+
+{{> partials/footer.hbs }}

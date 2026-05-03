@@ -1,0 +1,64 @@
+{
+    "brands": [
+        {
+            "title": "Samsung",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-1.png"
+        },
+        {
+            "title": "LG",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-2.png"
+        },
+        {
+            "title": "Vestel",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-3.png"
+        },
+        {
+            "title": "Philips",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-4.png"
+        },
+        {
+            "title": "Sony",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-5.png"
+        },
+        {
+            "title": "TCL",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-6.png"
+        },
+        {
+            "title": "Arçelik",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-7.png"
+        },
+        {
+            "title": "Beko",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-8.png"
+        },
+        {
+            "title": "Toshiba",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-9.png"
+        },
+        {
+            "title": "Onvo",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-10.png"
+        },
+        {
+            "title": "Sunny",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-11.png"
+        },
+        {
+            "title": "Axen",
+            "url": "service-detail.html",
+            "logo": "assets/image/index/logo-12.png"
+        }
+    ]
+}

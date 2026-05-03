@@ -1,0 +1,99 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="Blog" url="blog.html")
+                )
+            }}
+        </div>
+    </div>
+    {{> partials/components/hero.hbs
+        title="Blog"
+        description="TV panel değişimi, kırık ekran, led arızaları, görüntü problemleri ve teknik servis süreci hakkında bilgilendirici içerikler."
+    }}
+    <section class="clamp-[py,40px,80px] bg-[#F7F8FB]">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-6 max-lg:grid-cols-1">
+                <div class="col-span-8 max-lg:col-span-full">
+                    <p class="text-body font-medium text-dark mb-6">{{blog.intro}}</p>
+                    <div class="grid grid-cols-2 gap-6 max-md:grid-cols-1">
+                        {{#each blog.posts as |item|}}
+                            <article class="group {{#if @first}}col-span-2 max-md:col-span-1{{/if}} flex h-full flex-col overflow-hidden rounded-xl border border-text/10 bg-white lg:transition-shadow lg:duration-300 lg:hover:shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
+                                <a href="{{item.url}}" aria-label="{{item.title}} yazısını oku" class="block overflow-hidden">
+                                    <img src="{{item.image}}" alt="{{item.title}}" loading="lazy" width="433" height="289" class="w-full aspect-433/289 object-cover transition-transform duration-300 lg:group-hover:scale-105">
+                                </a>
+                                <div class="flex flex-1 flex-col clamp-[p,16px,20px]">
+                                    <div class="mb-4 flex flex-wrap items-center gap-2 text-[14px] leading-tight font-medium tracking-[-0.14px] text-text/70">
+                                        <span>{{item.date}}</span>
+                                        <span class="size-1 rounded-full bg-text/30"></span>
+                                        <span class="text-dark underline decoration-transparent underline-offset-4 transition-colors duration-300 lg:group-hover:text-secondary">{{item.category}}</span>
+                                    </div>
+                                    <h2 class="mb-3">
+                                        <a href="{{item.url}}" aria-label="{{item.title}} yazısını oku" class="inline-block lg:*:hover:text-secondary">
+                                            <span class="{{#if @first}}clamp-[text,24px,30px]{{else}}text-[22px] leading-[1.2] sm:text-[24px]{{/if}} font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">{{item.title}}</span>
+                                        </a>
+                                    </h2>
+                                    <p class="mb-6 text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-3">{{item.description}}</p>
+                                    <a href="{{item.url}}" aria-label="{{item.title}} yazısını okumaya devam et" class="mt-auto w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                                        <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Devamını Oku</span>
+                                        <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        {{/each}}
+                    </div>
+                    <nav class="mt-8 flex justify-center" aria-label="Blog sayfa numaraları">
+                        <ul class="flex items-center justify-center gap-2">
+                            <li>
+                                <a href="#" aria-label="Önceki sayfa" class="group size-10 rounded-sm bg-dark/10 text-text/40 flex-center transition-colors duration-300 hover:bg-dark/20 hover:text-dark">
+                                    <i class="icon-angle-left text-[16px] h-4 transition-transform duration-300 group-hover:-translate-x-0.5"></i>
+                                </a>
+                            </li>
+                            <li><a href="#" aria-current="page" class="size-10 rounded-sm bg-primary text-white text-[14px] font-medium flex-center transition-colors duration-300">1</a></li>
+                            <li><a href="#" class="size-10 rounded-sm bg-dark/5 text-dark/70 text-[14px] font-medium flex-center transition-colors duration-300 hover:bg-dark/20 hover:text-dark">2</a></li>
+                            <li><a href="#" class="size-10 rounded-sm bg-dark/5 text-dark/70 text-[14px] font-medium flex-center transition-colors duration-300 hover:bg-dark/20 hover:text-dark">3</a></li>
+                            <li><a href="#" class="size-10 rounded-sm bg-dark/5 text-dark/70 text-[14px] font-medium flex-center transition-colors duration-300 hover:bg-dark/20 hover:text-dark">4</a></li>
+                            <li><a href="#" class="size-10 rounded-sm bg-dark/5 text-dark/70 text-[14px] font-medium flex-center transition-colors duration-300 hover:bg-dark/20 hover:text-dark">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Sonraki sayfa" class="group size-10 rounded-sm bg-dark/10 text-text/70 flex-center transition-colors duration-300 hover:bg-dark/20 hover:text-dark">
+                                    <i class="icon-angle-right text-[16px] h-4 transition-transform duration-300 group-hover:translate-x-0.5"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <aside class="col-span-4 lg:clamp-[pl,24px,56px] max-lg:col-span-full">
+                    <div class="sticky top-[calc(var(--headerHeight)+24px)] self-start">
+                        <div class="rounded-xl border border-text/10 bg-white clamp-[p,16px,20px]">
+                            <h2 class="text-[20px] leading-tight font-medium tracking-[-0.2px] text-dark mb-3">Kategoriler</h2>
+                            <div class="h-px bg-dark/10 mb-4"></div>
+                            <ul class="flex flex-col gap-2.5">
+                                {{#each blog.categories as |item|}}
+                                    <li>
+                                        <a href="#" class="group/category inline-flex items-center gap-3 text-left text-[20px] leading-[1.6] font-medium tracking-[-0.2px] transition-colors duration-300 {{#if item.active}}text-dark{{else}}text-dark/80 hover:text-dark{{/if}}">
+                                            <span class="size-1.5 rounded-full transition-colors duration-300 {{#if item.active}}bg-secondary{{else}}bg-dark/20 group-hover/category:bg-secondary{{/if}}"></span>
+                                            <span class="transition-colors duration-300 group-hover/category:text-secondary">{{item.title}}</span>
+                                        </a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    {{> partials/components/cta.hbs
+        title="Televizyonunuzun markasına uygun hizmeti mi arıyorsunuz?"
+        description="Marka ve model bilgisiyle birlikte bize ulaşın, sizi en doğru hizmet sürecine yönlendirelim."
+        minPt=50 maxPt=100
+        minPb=50 maxPb=100
+    }}
+</main>
+
+{{> partials/footer.hbs }}

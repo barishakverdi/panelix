@@ -1,0 +1,55 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="Hizmetlerimiz" url="services.html")
+                    (object text="TV Panel Değişimi" url="service-detail.html")
+                )
+            }}
+        </div>
+    </div>
+    {{> partials/components/hero.hbs
+        title="TV Panel Değişimi"
+        description=" Kırık, çatlak, görüntü vermeyen veya hasarlı televizyon panelleri için profesyonel değişim hizmeti sunuyoruz. İstanbul genelinde marka ve model fark etmeksizin uygun çözüm süreci için destek sağlıyoruz."
+        miniCards=true
+        miniCardsContent=(array
+            (object title="İstanbul geneli servis" icon="assets/image/index/icon-2.svg")
+            (object title="Uygun Süreçlerde İkame TV" icon="assets/image/index/icon-1.svg")
+            (object title="Profesyonel Teknik Destek" icon="assets/image/index/icon-3.svg")
+        )
+    }}
+    {{> partials/components/service-detail/content.hbs
+        minPt=50 maxPt=50 minPb=50 maxPb=80
+    }}
+    {{> partials/components/service-detail/process.hbs }}
+    {{> partials/components/service-detail/why.hbs
+        minPt=50 maxPt=100 minPb=50 maxPb=100
+    }}
+    {{> partials/components/service-detail/brands.hbs
+        minPb=50 maxPb=100
+    }}
+    {{> partials/components/service-detail/locations.hbs
+        minPb=30 maxPb=50
+    }}
+    {{> partials/components/faq.hbs
+        minPt=50 maxPt=80 minPb=50 maxPb=80
+        array=(array
+            (object title="Panel Değişimi Ne Zaman Gerekir?" description="Televizyonunuzun ekranında renk bozulmaları, çizgiler veya görüntü kaybı gibi sorunlar varsa panel değişimi gerekebilir. Uzman ekibimiz arızanın panel kaynaklı olup olmadığını değerlendirerek size en uygun çözümü sunar.")
+            (object title="Kırık Ekran Değişimi Nasıl Yapılır?" description="Kırık ekran değişimi, televizyonunuzun modeline ve ekran boyutuna göre özel ekipman ve teknik bilgi gerektirir. Panelix olarak, deneyimli teknisyenlerimizle hızlı ve güvenilir kırık ekran değişimi hizmeti sunuyoruz.")
+            (object title="LED Arızaları Nasıl Anlaşılır?" description="LED arızaları genellikle ekranın belirli bölgelerinde kararma, renk bozulması veya görüntü kaybı şeklinde kendini gösterir. Uzman ekibimiz LED arızalarını tespit ederek uygun onarım veya değişim işlemi gerçekleştirir.")
+            (object title="Reflektör Sorunları Nedir?" description="Reflektör sorunları, televizyonunuzun ışık yansıtma sistemindeki arızalardır ve genellikle görüntü kalitesinde düşüşe neden olur. Panelix olarak reflektör sorunlarını tespit edip gerekli tamirat veya değişim işlemlerini yaparak görüntü kalitenizi eski haline getiriyoruz.")
+        )
+    }}
+    {{> partials/components/cta.hbs
+        title="TV’nizde panel kaynaklı bir sorun mu var?"
+        description="Arıza durumunu WhatsApp üzerinden bize iletin, sizi en uygun hizmet sürecine yönlendirelim."
+        minPb=50 maxPb=100
+    }}
+</main>
+
+{{> partials/footer.hbs }}

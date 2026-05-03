@@ -1,0 +1,45 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="Hakkımızda" url="about-us.html")
+                )
+            }}
+        </div>
+    </div>
+    {{> partials/components/hero.hbs
+        title="Hakkımızda"
+        description="Panelix olarak televizyon panel değişimi, kırık ekran değişimi, led arızaları ve görüntü problemlerine yönelik profesyonel teknik servis desteği sunuyoruz. İstanbul genelinde, çözüm odaklı ve güven veren bir hizmet anlayışıyla çalışıyoruz."
+    }}
+    <section data-module style="--min-pt: 50; --max-pt: 50; --min-pb: 50; --max-pb: 80; --min-w: 768; --max-w: 1600;">
+        <div class="container">
+            <div class="max-w-302.25">
+                <article class="editor home-editor clamp-[gap,20px,33px]">
+                    <h2>TV Teknik Servisinde Güven Odaklı Yaklaşım</h2>
+                    <p>Panelix, televizyonlarda sık karşılaşılan panel, ekran, led ve görüntü arızalarına çözüm sunmak amacıyla hizmet veren profesyonel bir teknik servis yapısıdır. Amacımız yalnızca arızayı gidermek değil, servis sürecini müşterilerimiz için daha güvenli, daha anlaşılır ve daha konforlu hale getirmektir.</p>
+                    <p>Bakırköy merkezli yapımızla İstanbul'un birçok bölgesine hizmet veriyor; marka ve model fark etmeksizin uygun çözüm sürecini belirlemeye odaklanıyoruz. Uygun servis süreçlerinde sunduğumuz ikame TV desteğiyle, müşterilerimizi televizyonsuz bırakmadan hizmet vermeyi hedefliyoruz.</p>
+                    <p></p>
+                    <h2>Bizi Farklı Kılan Nedir?</h2>
+                    <ul>
+                        <li><strong>Uzmanlık Odaklı Yaklaşım:</strong> Panel, ekran, led ve görüntü arızalarında çözüm odaklı servis süreci.</li>
+                        <li><strong>İstanbul Geneli Hizmet:</strong> Bakırköy merkezli yapımızla birçok ilçeye servis desteği.</li>
+                        <li><strong>İkame TV Desteği:</strong> Uygun servis süreçlerinde müşterilerimizi televizyonsuz bırakmamayı hedefliyoruz.</li>
+                        <li><strong>Şeffaf İletişim:</strong> Süreç boyunca anlaşılır ve güven veren bilgilendirme yaklaşımı.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+    {{> partials/components/cta.hbs
+        title="TV arızanız için hızlı bilgi almak ister misiniz?"
+        description="Arıza belirtilerini ve televizyon modelinizi bizimle paylaşın, sizi en uygun servis sürecine yönlendirelim."
+        minPt=50 maxPt=50 minPb=50 maxPb=80
+    }}
+</main>
+
+{{> partials/footer.hbs }}

@@ -1,0 +1,30 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="max-w-302.25">
+            <article class="editor clamp-[gap,20px,33px] clamp-[mb,30px,50px]">
+                <h2>TV Panel Değişimi Nedir?</h2>
+                <p>TV panel değişimi, ekran yüzeyinde kırık, çatlak, görüntü kaybı veya panel kaynaklı arızalar oluştuğunda
+                    uygulanan teknik işlem sürecidir. Panelix olarak televizyonun marka, model ve arıza durumuna göre en
+                    doğru çözüm yolunu belirliyor, gerekli durumlarda profesyonel panel değişimi hizmeti sunuyoruz.</p>
+                <p></p>
+                <h2>Hangi Durumlarda TV Panel Değişimi Gerekebilir?</h2>
+                <ul>
+                    <li>Ekranda kırık veya çatlak görünmesi</li>
+                    <li>Görüntünün tamamen gitmesi</li>
+                    <li>Ekranda dikey / yatay çizgiler oluşması</li>
+                    <li>Panel darbesi sonrası görüntü bozulması</li>
+                    <li>Ekranın bir bölümünün kararması</li>
+                    <li>İç ekran hasarı nedeniyle görüntü kaybı</li>
+                </ul>
+            </article>
+            <div>
+                <h2 class="text-h2 text-dark clamp-[mb,20px,33px]">Hizmet Kapsamı</h2>
+                <div class="flex flex-wrap clamp-[gap,8px,16px]">
+                    {{#each (array "Ön inceleme ve arıza değerlendirmesi" "Panel kaynaklı sorunun tespiti" "Marka-model uyumluluk kontrolü" "Gerekli değişim sürecinin planlanması" "Servis süreci hakkında bilgilendirme" "Uygun durumlarda ikame TV desteği") as |item|}}
+                        <p class="inline-block bg-white clamp-[p,8px,16px] rounded-xl text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark text-center">{{item}}</p>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

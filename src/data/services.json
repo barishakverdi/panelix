@@ -1,0 +1,76 @@
+{
+    "services": [
+        {
+            "title": "TV Panel Değişimi",
+            "description": "Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.",
+            "icon": "assets/image/index/icon-5.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Kırık Ekran TV Değişimi",
+            "description": "Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.",
+            "icon": "assets/image/index/icon-6.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "TV LED Değişimi",
+            "description": "Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.",
+            "icon": "assets/image/index/icon-7.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "TV Anakart Tamiri",
+            "description": "Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.",
+            "icon": "assets/image/index/icon-8.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "LED ve Reflektör Değişimi",
+            "description": "Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.",
+            "icon": "assets/image/index/icon-5.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Ses Var Görüntü Yok",
+            "description": "Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.",
+            "icon": "assets/image/index/icon-6.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Mavi Ekran Sorunu",
+            "description": "Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.",
+            "icon": "assets/image/index/icon-7.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "TV Anakart Tamiri",
+            "description": "Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.",
+            "icon": "assets/image/index/icon-8.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "TV Görüntü Problemleri",
+            "description": "Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.",
+            "icon": "assets/image/index/icon-5.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Smart TV Yazılım Sorunları",
+            "description": "Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.",
+            "icon": "assets/image/index/icon-6.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "TV Kurulum ve Montaj",
+            "description": "Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.",
+            "icon": "assets/image/index/icon-7.svg",
+            "url": "service-detail.html"
+        },
+        {
+            "title": "Uydu ve Kanal Ayarı",
+            "description": "Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.",
+            "icon": "assets/image/index/icon-8.svg",
+            "url": "service-detail.html"
+        }
+    ]
+}

@@ -1,0 +1,306 @@
+{
+    "index": {
+        "hero": [
+            {
+                "title": "İkame TV Desteği",
+                "icon": "assets/image/index/icon-1.svg"
+            },
+            {
+                "title": "İstanbul geneli servis",
+                "icon": "assets/image/index/icon-2.svg"
+            },
+            {
+                "title": "Garantili İşçilik",
+                "icon": "assets/image/index/icon-3.svg"
+            }
+        ],
+        "services": [
+            {
+                "title": "TV Panel Değişimi",
+                "description": "Ekran panelinde oluşan fiziksel hasar, görüntü kaybı veya ciddi ekran sorunlarında profesyonel panel değişimi hizmeti sunuyoruz. Cihaz modeline uygun çözümü belirleyerek süreci güvenli şekilde yönetiyoruz.",
+                "icon": "assets/image/index/icon-5.svg",
+                "url": "service-detail.html"
+            },
+            {
+                "title": "Kırık Ekran TV Değişimi",
+                "description": "Darbe, düşme veya baskı kaynaklı kırık ekran problemlerinde cihazınızın durumunu inceliyor, uygun ise ekran değişimi sürecini planlıyoruz. Amaç, sizi net ve ekonomik çözüme ulaştırmak.",
+                "icon": "assets/image/index/icon-6.svg",
+                "url": "service-detail.html"
+            },
+            {
+                "title": "TV LED Değişimi",
+                "description": "Ses olmasına rağmen görüntü gelmiyorsa veya ekran karanlık görünüyorsa led arızası söz konusu olabilir. Led bar ve aydınlatma kaynaklı sorunlarda doğru müdahale ile görüntü performansını geri kazandırıyoruz.",
+                "icon": "assets/image/index/icon-7.svg",
+                "url": "service-detail.html"
+            },
+            {
+                "title": "TV Anakart Tamiri",
+                "description": "Açılmama, kapanıp açılma, görüntü vermeme veya bağlantı sorunları gibi anakart kaynaklı arızalarda detaylı teknik kontrol sağlıyor, onarım veya uygun çözüm seçeneklerini sunuyoruz.",
+                "icon": "assets/image/index/icon-8.svg",
+                "url": "service-detail.html"
+            }
+        ],
+        "malfunction": [
+            {
+                "title": "Ses Var, Görüntü Yok",
+                "description": "Televizyon açılıyor ve ses geliyor ancak ekranda görüntü oluşmuyorsa led, panel veya görüntü aktarımıyla ilgili bir arıza olabilir. Bu durum en sık karşılaşılan sorunlardan biridir.",
+                "image": "assets/image/index/image-8.jpg"
+            },
+            {
+                "title": "Mavi Ekran Sorunu",
+                "description": "Ekranın tamamen mavi görünmesi, sinyal, panel, görüntü kartı veya iç donanım kaynaklı problemlerden kaynaklanabilir. Sorunun doğru tespiti için detaylı inceleme gerekir.",
+                "image": "assets/image/index/image-7.jpg"
+            },
+            {
+                "title": "Ekranda Işık Lekeleri ve Parlamalar",
+                "description": "Ekranda beliren parlak noktalar, mercek izi benzeri görüntüler veya homojen olmayan ışık dağılımı genellikle led ve reflektör sistemindeki sorunlara işaret eder.",
+                "image": "assets/image/index/image-6.jpg"
+            },
+            {
+                "title": "TV Açılıyor Ama Görüntü Gelmiyor",
+                "description": "Cihazın çalışıyor gibi görünmesine rağmen ekranda görüntü oluşmaması; panel, led bar, anakart veya bağlantılı bileşenlerde yaşanan teknik problemlerden kaynaklanabilir.",
+                "image": "assets/image/index/image-5.jpg"
+            },
+            {
+                "title": "Ekranda Çizgiler Oluşuyor",
+                "description": "Dikey ya da yatay çizgiler, panel yüzeyinde hasar veya ekran bileşenlerinde bozulma olduğuna işaret edebilir. Özellikle artan çizgiler ilerleyen arızaların habercisi olabilir.",
+                "image": "assets/image/index/image-4.jpg"
+            },
+            {
+                "title": "Görüntü Karanlık veya Silik",
+                "description": "Ekranda görüntü çok karanlık, soluk veya yalnızca belli açılarda görünüyorsa aydınlatma sistemi ya da led bar kaynaklı bir arıza söz konusu olabilir.",
+                "image": "assets/image/index/image-3.jpg"
+            }
+        ],
+        "process": [
+            {
+                "title": "Bize Ulaşın",
+                "subTitle": "Hızlı ön bilgilendirme",
+                "description": "WhatsApp veya telefon üzerinden televizyonunuzdaki sorunu bize iletin. İlk değerlendirmeyi yapalım, arızaya göre sizi doğru şekilde yönlendirelim.",
+                "icon": "assets/image/index/big-icon-1.svg"
+            },
+            {
+                "title": "Arıza Tespiti Yapılsın",
+                "subTitle": "Doğru teşhis",
+                "description": "Cihazın durumuna göre yerinde ön kontrol veya atölye inceleme sürecini planlayalım. Sorunun kaynağını netleştirip en uygun çözümü belirleyelim.",
+                "icon": "assets/image/index/big-icon-2.svg"
+            },
+            {
+                "title": "Şeffaf ve kontrollü işlem",
+                "subTitle": "Onarım veya Değişim Süreci",
+                "description": "Panel, ekran, led veya anakart kaynaklı arızaya göre gerekli teknik işlemleri uygulayalım. Uygun durumlarda süreç boyunca ikame TV desteği de sunalım.",
+                "icon": "assets/image/index/big-icon-3.svg"
+            },
+            {
+                "title": "Teslim ve Memnuniyet",
+                "subTitle": "Güvenle teslim",
+                "description": "İşlem tamamlandıktan sonra televizyonunuzu güvenle teslim edelim. Amacımız yalnızca arızayı gidermek değil, memnun kalacağınız bir servis deneyimi sunmaktır.",
+                "icon": "assets/image/index/big-icon-4.svg"
+            }
+        ],
+        "comments": [
+            {
+                "title": "S**** T****",
+                "description": "Çok güzel temiz hızlı ve net esnaf gibi esnaf usta gibi  usta elinize sağlık 2 yıllık TV sıfır gibi oldu hayırlı işler bol  kazançlar Hiç tereddüt etmeden iş verebilirsiniz."
+            },
+            {
+                "title": "E**** Y****",
+                "description": "Herşey çok iyiydi. İlk iletişime geçtiğim andan ürün  yapılıp tekrar elime gelene kadar en ufak bir sorun yaşamadım.  Televizyonum tamirdeyken yerine iyi bir tv bıraktı sağolsun. İletişimde  şeffaf, işinde iyi artık herkese gönül rahatlığıyla önereceğim bir yer."
+            },
+            {
+                "title": "C**** E****",
+                "description": "İlgi ve alakaları için teşekkür ederim. Kısa sürede  arızayı çözüp tamir ettiler ve mağduriyet yaşamayalım diye konsinye Tv  de verdiler tamir süresi boyunca"
+            },
+            {
+                "title": "Ö**** B****",
+                "description": "Mustafa çalışkanöztütk beye gerekten çok Teşekürler tvdeki arızamı en kısa sürede onarıp Teslim etti bundan sonra güvenle çalışacağım bir servis buldum ellerine sağlık tekrardan teşekkürler"
+            },
+            {
+                "title": "P**** R****",
+                "description": "Harika bir usta ben tavsiye ediyorum gerçekten konu  hakkında yardımcı oluyorlar güler yüzlü müşterilerine davranıyorlar  gerçekten konu hakkında yardımcı oluyorlar en iyi malzemeleri ve en iyi  fiyat performansı bence denemenizi tavsiye ediyorum teşekkürler"
+            },
+            {
+                "title": "R**** Ö****",
+                "description": "Televizyonum hızlı bir şekilde yapılıp teslim edildi. En ufak bir problem yaşamadım. Mustafa’ya çok teşekkürler"
+            },
+            {
+                "title": "U**** Ö****",
+                "description": "Samsung 65inch Qled tvmizin ledlerindeki arizayi kısa  surede en uygun fiyata çöźdüler.Cok memnun kaldım hizmetlerinden  kesinlikle tavsiyeder"
+            },
+            {
+                "title": "S**** T****",
+                "description": "Çok güzel temiz hızlı ve net esnaf gibi esnaf usta gibi  usta elinize sağlık 2 yıllık TV sıfır gibi oldu hayırlı işler bol  kazançlar Hiç tereddüt etmeden iş verebilirsiniz."
+            },
+            {
+                "title": "E**** Y****",
+                "description": "Herşey çok iyiydi. İlk iletişime geçtiğim andan ürün  yapılıp tekrar elime gelene kadar en ufak bir sorun yaşamadım.  Televizyonum tamirdeyken yerine iyi bir tv bıraktı sağolsun. İletişimde  şeffaf, işinde iyi artık herkese gönül rahatlığıyla önereceğim bir yer."
+            },
+            {
+                "title": "C**** E****",
+                "description": "İlgi ve alakaları için teşekkür ederim. Kısa sürede  arızayı çözüp tamir ettiler ve mağduriyet yaşamayalım diye konsinye Tv  de verdiler tamir süresi boyunca"
+            },
+            {
+                "title": "Ö**** B****",
+                "description": "Mustafa çalışkanöztütk beye gerekten çok Teşekürler tvdeki arızamı en kısa sürede onarıp Teslim etti bundan sonra güvenle çalışacağım bir servis buldum ellerine sağlık tekrardan teşekkürler"
+            },
+            {
+                "title": "P**** R****",
+                "description": "Harika bir usta ben tavsiye ediyorum gerçekten konu  hakkında yardımcı oluyorlar güler yüzlü müşterilerine davranıyorlar  gerçekten konu hakkında yardımcı oluyorlar en iyi malzemeleri ve en iyi  fiyat performansı bence denemenizi tavsiye ediyorum teşekkürler"
+            },
+            {
+                "title": "R**** Ö****",
+                "description": "Televizyonum hızlı bir şekilde yapılıp teslim edildi. En ufak bir problem yaşamadım. Mustafa’ya çok teşekkürler"
+            },
+            {
+                "title": "U**** Ö****",
+                "description": "Samsung 65inch Qled tvmizin ledlerindeki arizayi kısa  surede en uygun fiyata çöźdüler.Cok memnun kaldım hizmetlerinden  kesinlikle tavsiyeder"
+            }
+        ],
+        "brands": [
+            {
+                "title": "Samsung",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-1.png"
+            },
+            {
+                "title": "LG",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-2.png"
+            },
+            {
+                "title": "Vestel",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-3.png"
+            },
+            {
+                "title": "Philips",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-4.png"
+            },
+            {
+                "title": "Sony",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-5.png"
+            },
+            {
+                "title": "TCL",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-6.png"
+            },
+            {
+                "title": "Arçelik",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-7.png"
+            },
+            {
+                "title": "Beko",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-8.png"
+            },
+            {
+                "title": "Toshiba",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-9.png"
+            },
+            {
+                "title": "Onvo",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-10.png"
+            },
+            {
+                "title": "Sunny",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-11.png"
+            },
+            {
+                "title": "Axen",
+                "url": "service-detail.html",
+                "logo": "assets/image/index/logo-12.png"
+            }
+        ],
+        "locations": [
+            {
+                "title": "Bakırköy",
+                "description": "Bakırköy ve çevresinde panel, ekran ve led arızalarına hızlı teknik servis desteği."
+            },
+            {
+                "title": "Bahçelievler",
+                "description": "Kırık ekran, görüntü problemi ve TV led arızalarında profesyonel destek."
+            },
+            {
+                "title": "Zeytinburnu",
+                "description": "Televizyon panel değişimi ve teknik servis işlemlerinde güvenilir çözüm."
+            },
+            {
+                "title": "Beylikdüzü",
+                "description": "TV ekran ve led problemlerinde profesyonel teknik servis desteği."
+            },
+            {
+                "title": "Şişli",
+                "description": "Marka ve model fark etmeksizin televizyon arızalarında çözüm odaklı hizmet."
+            },
+            {
+                "title": "Kadıköy",
+                "description": "Anadolu Yakası’nda televizyon panel ve led değişim hizmetleri."
+            },
+            {
+                "title": "Üsküdar",
+                "description": "Ekran, görüntü ve teknik arızalarda profesyonel servis desteği."
+            },
+            {
+                "title": "Maltepe",
+                "description": "Size en yakın teknik servis desteği."
+            }
+        ],
+        "faq": [
+            {
+                "title": "Televizyonumda ses var ama görüntü yok. Sebebi ne olabilir?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "Servis için televizyonu atölyeye alıyor musunuz?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "Kırık TV ekranı tamir edilir mi?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "Televizyon tamirdeyken ikame TV veriyor musunuz?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "TV panel değişimi ne kadar sürer?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "İkame TV birebir aynı model mi oluyor?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "LED değişimi ile panel değişimi aynı işlem midir?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "Arıza tespiti yapılmadan fiyat verilebilir mi?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "Hangi televizyon markalarına servis veriyorsunuz?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "Yapılan işlemler garantili mi?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "İstanbul’un hangi bölgelerine hizmet veriyorsunuz?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            },
+            {
+                "title": "WhatsApp üzerinden bilgi alabilir miyim?",
+                "description": "Bu durum genellikle LED, panel veya görüntü bileşenleriyle ilgili bir arızadan kaynaklanır. Net tespit için teknik inceleme gerekir."
+            }
+        ]
+    }
+}

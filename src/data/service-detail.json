@@ -1,0 +1,45 @@
+{
+    "service-detail": {
+        "process": [
+            {
+                "title": "1. Ön değerlendirme yapılır",
+                "description": "TV’nin arıza durumu ve panel hasarı incelenir."
+            },
+            {
+                "title": "2. Uygun işlem planlanır",
+                "description": "Cihazın marka, modeli ve arıza kapsamına göre çözüm süreci belirlenir."
+            },
+            {
+                "title": "3. Teknik servis işlemi uygulanır",
+                "description": "Gerekli servis müdahalesi kontrollü şekilde gerçekleştirilir."
+            },
+            {
+                "title": "4. Teslim ve bilgilendirme yapılır",
+                "description": "İşlem tamamlandıktan sonra kullanıcıya süreç hakkında bilgi verilir."
+            }
+
+        ],
+        "why": [
+            {
+                "title": "TV panel ve görüntü arızalarında uzman yaklaşım",
+                "icon": "icon-screwdriver"
+            },
+            {
+                "title": "İstanbul geneli servis",
+                "icon": "icon-location-pin"
+            },
+            {
+                "title": "Marka ve model bazlı değerlendirme",
+                "icon": "icon-panelix"
+            },
+            {
+                "title": "Süreç boyunca bilgilendirme",
+                "icon": "icon-phone"
+            },
+            {
+                "title": "Güven ve müşteri memnuniyeti odaklı hizmet",
+                "icon": "icon-arrow-right"
+            }
+        ]
+    }
+}

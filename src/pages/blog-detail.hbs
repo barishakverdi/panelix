@@ -1,0 +1,148 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="Blog" url="blog.html")
+                    (object text=blog.detail.title url="blog-detail.html")
+                )
+            }}
+        </div>
+    </div>
+
+    <section class="bg-[#F7F8FB] border-y border-dark/10 clamp-[pt,50px,80px] clamp-[pb,60px,120px]">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-6 max-lg:grid-cols-1">
+                <div class="col-span-2 max-lg:hidden"></div>
+                <div class="col-span-8 max-lg:col-span-full">
+                    <div class="clamp-[mb,30px,40px]">
+                        <div class="mb-4 flex flex-wrap items-center gap-2 text-[14px] leading-tight font-medium tracking-[-0.14px] text-text/80">
+                            <span>{{blog.detail.date}}</span>
+                            <span class="size-1 rounded-full bg-text/30"></span>
+                            <a href="#" class="text-text underline underline-offset-4 transition-colors duration-300 hover:text-secondary">{{blog.detail.category}}</a>
+                        </div>
+                        <h1 class="text-h1 text-dark mb-4">{{blog.detail.title}}</h1>
+                        <p class="text-body text-text max-w-232.5 mb-6">{{blog.detail.description}}</p>
+                        <div class="flex items-center gap-3 text-[32px] text-dark/15">
+                            <span class="leading-none">•</span>
+                            <span class="text-[20px] leading-tight tracking-[-0.2px] text-text italic">{{blog.detail.readTime}}</span>
+                        </div>
+                    </div>
+
+                    <img src="{{blog.detail.heroImage}}" alt="{{blog.detail.title}}" loading="lazy" width="1200" height="720" class="w-full aspect-16/9 object-cover rounded-xl clamp-[mb,20px,30px]">
+
+                    <div class="w-full max-w-125 rounded-xl border border-dark/10 bg-white clamp-[p,16px,24px] clamp-[mb,40px,60px]">
+                        <h2 class="text-h2 text-dark mb-3">Bu Yazıda Neler Var?</h2>
+                        <div class="h-px bg-dark/10 mb-4"></div>
+                        <ol class="list-decimal pl-6 space-y-2.5">
+                            {{#each blog.detail.tableOfContents as |item|}}
+                                <li class="text-[20px] leading-[1.5] font-medium tracking-[-0.2px] text-dark">{{item}}</li>
+                            {{/each}}
+                        </ol>
+                    </div>
+
+                    <article class="editor clamp-[mb,40px,70px]">
+                        <h2>TV’de Ses Var Görüntü Yok Sorununun En Yaygın Nedenleri</h2>
+                        <h3>1. LED Bar Arızası</h3>
+                        <p>Televizyon ekranında görüntünün oluşabilmesi için yalnızca panel değil, arka aydınlatma sistemi de düzgün çalışmalıdır. LED bar arızalarında ekran tamamen karanlık görünebilir. Bazı durumlarda ekrana dikkatli bakıldığında çok silik görüntü fark edilebilir. Bu sorun özellikle “ses geliyor ama ekran görünmüyor” şikayetlerinde sık görülür.</p>
+                        <h3>2. Panel Kaynaklı Problemler</h3>
+                        <p>Panel hasarı veya panelin görüntü üretimini etkileyen sorunlar da ekranın tamamen görüntüsüz kalmasına neden olabilir. Darbe almış, iç ekran hasar görmüş veya panel yapısında problem oluşmuş cihazlarda bu belirti ortaya çıkabilir.</p>
+                        <h3>3. Reflektör ve Aydınlatma Katmanı Sorunları</h3>
+                        <p>Bazı televizyonlarda reflektör ve aydınlatma katmanlarında oluşan sorunlar, görüntünün düzgün dağılmamasına veya ekranın çalışmıyor gibi görünmesine yol açabilir. Özellikle ışık dengesizliği, kararma veya bölgesel görüntü kaybı yaşayan cihazlarda bu ihtimal değerlendirilir.</p>
+                        <h3>4. Görüntü Aktarma Bileşenlerinde Problem</h3>
+                        <p>Bazı durumlarda sorun LED veya panelde değil, görüntü iletiminden sorumlu teknik bileşenlerde olabilir. Bu tip arızalarda cihaz çalışıyor gibi görünür ancak görüntü ekrana doğru şekilde yansıtılamaz.</p>
+                        <p>Bazı durumlarda sorun LED veya panelde değil, görüntü iletiminden sorumlu teknik bileşenlerde olabilir. Bu tip arızalarda cihaz çalışıyor gibi görünür ancak görüntü ekrana doğru şekilde yansıtılamaz.</p>
+                        <h2>Evde Kontrol Edebileceğiniz Basit Noktalar</h2>
+                        <p>Sorunun kaynağına dair fikir edinmek için bazı temel kontroller yapılabilir. Ancak cihazı bilinçsiz şekilde açmak veya müdahale etmek daha büyük hasarlara yol açabilir.</p>
+                        <ul>
+                            {{#each blog.detail.homeChecks as |item|}}
+                                <li>{{item}}</li>
+                            {{/each}}
+                        </ul>
+                        <p>Bu adımlar yalnızca ön kontrol içindir. Sorun devam ediyorsa profesyonel teknik destek alınması daha doğru olacaktır.</p>
+                        <h3>Her “Ses Var Görüntü Yok” Sorunu Aynı Mıdır?</h3>
+                        <p>Hayır. Kullanıcı açısından belirti aynı görünse de teknik tarafta farklı nedenler olabilir. Bir cihazda yalnızca LED arızası bulunurken, başka bir televizyonda panel kaynaklı daha farklı bir problem görülebilir. Bu yüzden internetten bulunan genel bilgiler yardımcı olsa da net çözüm için cihazın kendi durumu değerlendirilmelidir.</p>
+                        <h2>Sonuç</h2>
+                        <p>TV’de ses var görüntü yok sorunu, kullanıcılar arasında en yaygın televizyon arızalarından biridir. Ancak bu belirti tek bir teknik soruna işaret etmez. LED sistemi, panel yapısı, reflektör katmanları veya görüntü aktarımıyla ilgili farklı problemler bu sonuca yol açabilir. Bu nedenle doğru çözüm için cihazın profesyonel şekilde değerlendirilmesi önemlidir.</p>
+                        <p>Televizyonunuzda benzer bir sorun yaşıyorsanız, arıza belirtilerini paylaşarak ön bilgi alabilir ve size uygun hizmet süreci hakkında destek isteyebilirsiniz.</p>
+                    </article>
+
+                    <div>
+                        <h2 class="text-h2 text-dark clamp-[mb,20px,33px]">Bu Sorunla İlgili Hizmetler</h2>
+                        <div class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1">
+                            {{#each blog.detail.services as |item|}}
+                                <div class="bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex! flex-col justify-between clamp-[gap,16px,30px]">
+                                    <div>
+                                        <div class="clamp-[size,40px,60px] bg-primary clamp-[rounded,8px,12px] flex-center mb-4">
+                                            <img src="{{item.icon}}" alt="" loading="lazy" width="24" height="24" class="clamp-[size,18px,24px] object-contain">
+                                        </div>
+                                        <h3 class="mb-3">
+                                            <a href="{{item.url}}" class="inline-block lg:*:hover:text-secondary">
+                                                <span class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark lg:transition-colors lg:duration-300">{{item.title}}</span>
+                                            </a>
+                                        </h3>
+                                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">{{item.description}}</p>
+                                    </div>
+                                    <a href="{{item.url}}" class=" w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                                        <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Detaylı İncele</span>
+                                        <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                                    </a>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 max-lg:hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    {{> partials/components/faq.hbs
+        minPt=50 maxPt=80
+        minPb=30 maxPb=50
+        array=blog.detail.faq
+    }}
+
+    {{> partials/components/cta.hbs
+        title="Televizyonunuzda Görüntü Problemi mi Var?"
+        description="Arıza belirtilerini bize iletin, sizi en uygun servis sürecine yönlendirelim."
+        minPt=50 maxPt=80
+        minPb=50 maxPb=80
+    }}
+
+    <section class="clamp-[pt,40px,60px] clamp-[pb,60px,110px] bg-[#F7F8FB]">
+        <div class="container">
+            <h2 class="text-h2 text-dark clamp-[mb,20px,33px]">Benzer İçerikler</h2>
+            <div class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1">
+                {{#each blog.detail.relatedPosts as |item|}}
+                    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-text/10 bg-white lg:transition-shadow lg:duration-300 lg:hover:shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
+                        <a href="{{item.url}}" aria-label="{{item.title}} yazısını oku" class="block overflow-hidden">
+                            <img src="{{item.image}}" alt="{{item.title}}" loading="lazy" width="433" height="289" class="w-full aspect-433/289 object-cover transition-transform duration-300 lg:group-hover:scale-105">
+                        </a>
+                        <div class="flex flex-1 flex-col clamp-[p,16px,20px]">
+                            <div class="mb-4 flex flex-wrap items-center gap-2 text-[14px] leading-tight font-medium tracking-[-0.14px] text-text/70">
+                                <span>{{item.date}}</span>
+                                <span class="size-1 rounded-full bg-text/30"></span>
+                                <span class="text-dark underline decoration-transparent underline-offset-4 transition-colors duration-300 lg:group-hover:text-secondary">{{item.category}}</span>
+                            </div>
+                            <h3 class="text-h3 text-dark mb-3">
+                                <a href="{{item.url}}" aria-label="{{item.title}} yazısını oku" class="inline-block lg:transition-colors lg:duration-300 lg:hover:text-secondary">{{item.title}}</a>
+                            </h3>
+                            <p class="mb-6 text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2">{{item.description}}</p>
+                            <a href="{{item.url}}" aria-label="{{item.title}} yazısını okumaya devam et" class="mt-auto w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                                <span class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300">Devamını Oku</span>
+                                <i class="icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300"></i>
+                            </a>
+                        </div>
+                    </article>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</main>
+
+{{> partials/footer.hbs }}

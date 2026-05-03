@@ -2,7 +2,7 @@
 @import "swiper/css";
 @import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-html.lenis,
+/* html.lenis,
 html.lenis body {
     height: auto;
 }
@@ -17,113 +17,98 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
     pointer-events: none;
-}
+} */
 
-/* Normal Font @font-face */
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 400.0;
+*
+* available axes:
+'wght' (range from 100.0 to 900.0
+*/
 @font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-Italic.eot');
-    src: url('../../assets/font/figtree/Figtree-Italic.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-Italic.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-Italic.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    font-family: 'Switzer';
+    src: url('../../assets/font/switzer/Switzer-Variable.woff2') format('woff2'),
+    url('../../assets/font/switzer/Switzer-Variable.woff') format('woff');
+    font-weight: 100 900;
     font-display: swap;
-}
-
-@font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-Bold.eot');
-    src: url('../../assets/font/figtree/Figtree-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-Bold.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-Bold.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-Bold.ttf') format('truetype');
-    font-weight: bold;
     font-style: normal;
-    font-display: swap;
 }
-
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 400.0;
+*
+* available axes:
+'wght' (range from 100.0 to 900.0
+*/
 @font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-SemiBoldItalic.eot');
-    src: url('../../assets/font/figtree/Figtree-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-SemiBoldItalic.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-SemiBoldItalic.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-SemiBoldItalic.ttf') format('truetype');
-    font-weight: 600;
+    font-family: 'Switzer';
+    src: url('../../assets/font/switzer/Switzer-VariableItalic.woff2') format('woff2'),
+    url('../../assets/font/switzer/Switzer-VariableItalic.woff') format('woff');
+    font-weight: 100 900;
+    font-display: swap;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-MediumItalic.eot');
-    src: url('../../assets/font/figtree/Figtree-MediumItalic.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-MediumItalic.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-MediumItalic.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-SemiBold.eot');
-    src: url('../../assets/font/figtree/Figtree-SemiBold.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-SemiBold.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-SemiBold.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-Medium.eot');
-    src: url('../../assets/font/figtree/Figtree-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-Medium.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-Medium.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-BoldItalic.eot');
-    src: url('../../assets/font/figtree/Figtree-BoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-BoldItalic.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-BoldItalic.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Figtree';
-    src: url('../../assets/font/figtree/Figtree-Regular.eot');
-    src: url('../../assets/font/figtree/Figtree-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/font/figtree/Figtree-Regular.woff2') format('woff2'),
-    url('../../assets/font/figtree/Figtree-Regular.woff') format('woff'),
-    url('../../assets/font/figtree/Figtree-Regular.ttf') format('truetype');
+    font-family: 'iconfont';
+    src: url('../../assets/font/iconfont/iconfont.eot');
+    src: url('../../assets/font/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/font/iconfont/iconfont.woff') format('woff'),
+    url('../../assets/font/iconfont/iconfont.ttf') format('truetype'),
+    url('../../assets/font/iconfont/iconfont.svg#iconfont') format('svg');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+}
+[class*='icon-']:before{
+    display: inline-block;
+    font-family: 'iconfont';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+[class*='icon-'] {
+    @apply leading-none inline-block;
 }
 
-/* Variable Font @font-face */
-@font-face {
-    font-family: 'Overused Grotesk';
-    src: url('../../assets/font/overused-grotesk/OverusedGrotesk-VF.woff2') format('woff2 supports variations'),
-    url('../../assets/font/overused-grotesk/OverusedGrotesk-VF.woff2') format('woff2-variations'),
-    url('../../assets/font/overused-grotesk/OverusedGrotesk-VF.woff2') format('truetype-variations');
-    font-weight: 300 900;
-    font-display: swap;
-    font-style: normal;
-    ascent-override: 100%;
+.icon-whatsapp:before{content:'\0041';}
+.icon-phone:before{content:'\0042';}
+.icon-facebook:before{content:'\0043';}
+.icon-tiktok:before{content:'\0044';}
+.icon-arrow-down:before{content:'\0045';}
+.icon-arrow-up:before{content:'\0046';}
+.icon-arrow-left:before{content:'\0047';}
+.icon-arrow-right:before{content:'\0048';}
+.icon-x:before{content:'\0049';}
+.icon-linkedin:before{content:'\004a';}
+.icon-youtube:before{content:'\004b';}
+.icon-location-pin:before{content:'\004c';}
+.icon-screwdriver:before{content:'\004d';}
+.icon-arrow-up-right:before{content:'\004e';}
+.icon-angle-right:before{content:'\004f';}
+.icon-angle-left:before{content:'\0050';}
+.icon-angle-up:before{content:'\0051';}
+.icon-angle-down:before{content:'\0052';}
+.icon-panelix:before{content:'\0053';}
+.icon-instagram:before{content:'\0054';}
+
+:is(.fluid-space, [data-module]) {
+    /* Slope hesaplaması (sadece sayılar) */
+    --slope-pt: calc((var(--max-pt) - var(--min-pt)) / (var(--max-w) - var(--min-w)));
+    --slope-pb: calc((var(--max-pb) - var(--min-pb)) / (var(--max-w) - var(--min-w)));
+
+    /* Intercept hesaplaması */
+    --intercept-pt: calc(var(--min-pt) - var(--slope-pt) * var(--min-w));
+    --intercept-pb: calc(var(--min-pb) - var(--slope-pb) * var(--min-w));
+
+    padding-top: clamp(calc(var(--min-pt) * 1px), calc((var(--intercept-pt) * 1px) + var(--slope-pt) * 100vw), calc(var(--max-pt) * 1px));
+    padding-bottom: clamp(calc(var(--min-pb) * 1px), calc((var(--intercept-pb) * 1px) + var(--slope-pb) * 100vw), calc(var(--max-pb) * 1px));
+}
+
+:root, body, html {
+    scrollbar-gutter: stable;
 }

@@ -1,0 +1,215 @@
+<div class="fixed z-30 right-0 bottom-0 clamp-[pr,16px,30px] clamp-[pb,16px,30px] flex flex-col gap-6">
+    <a href="tel:+905350577188" title="+905350577188" class="bg-primary clamp-[size,40px,54px] flex-center rounded-full shadow-[0_0_3px_4px_rgba(15,23,42,0.35)] lg:transiton-all lg:duration-300 lg:hover:bg-dark lg:hover:shadow-[0_0_3px_4px_rgba(0,0,0,0.35)]">
+        <i class="icon-phone clamp-[text,18px,24px] clamp-[h,18px,24px] text-white"></i>
+    </a>
+    <a href="https://wa.me/+905350577188" title="Whatsapp ile iletişim kur" target="_blank" class="bg-[#25D366] clamp-[size,40px,54px] flex-center rounded-full shadow-[0_0_3px_4px_rgba(37,211,102,0.35)] lg:transiton-all lg:duration-300 lg:hover:bg-[#1DA851] lg:hover:shadow-[0_0_3px_4px_rgba(30,30,30,0.35)] lg:hover:*:text-white">
+        <i class="icon-whatsapp clamp-[text,18px,24px] clamp-[h,18px,24px] text-dark lg:transition-colors lg:duration-300"></i>
+    </a>
+</div>
+<div class="fixed-full z-50 bg-black/25" x-show="$store.data.menuOpen || $store.data.dropdownMenuOpen" x-transition.opacity.duration.300ms></div>
+<script>
+    (() => {
+        const createOverlayLink = (brand) => {
+            const link = document.createElement("a");
+            link.href = brand.url || "#";
+            link.title = brand.title || "Marka";
+            link.className = "absolute-full block z-2";
+            return link;
+        };
+
+        const createBrandsPageCard = (brand) => {
+            const card = document.createElement("div");
+            card.className = "bg-white/10 border border-dark/10 rounded-xl clamp-[px,16px,24px] clamp-[py,20px,30px] flex flex-col justify-between clamp-[gap,16px,30px]";
+
+            const top = document.createElement("div");
+
+            const logoWrap = document.createElement("div");
+            logoWrap.className = "clamp-[h,40px,70px] flex items-center mb-5 clamp-[pr,30px,120px]";
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "size-full object-contain object-left";
+            logoWrap.appendChild(logo);
+
+            const title = document.createElement("h3");
+            title.className = "mb-3";
+
+            const titleLink = document.createElement("a");
+            titleLink.href = brand.url || "#";
+            titleLink.className = "inline-block lg:*:hover:text-secondary";
+
+            const titleText = document.createElement("span");
+            titleText.className = "clamp-[text,22px,26px] leading-tight font-medium tracking-[-0.26px] text-dark lg:transition-colors lg:duration-300";
+            titleText.textContent = brand.title || "";
+            titleLink.appendChild(titleText);
+            title.appendChild(titleLink);
+
+            const description = document.createElement("p");
+            description.className = "text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text line-clamp-2";
+            description.textContent = brand.description || "";
+
+            top.appendChild(logoWrap);
+            top.appendChild(title);
+            top.appendChild(description);
+
+            const detailLink = document.createElement("a");
+            detailLink.href = brand.url || "#";
+            detailLink.className = "w-fit inline-flex items-center gap-4 border-b border-dark pb-1.25 lg:hover:*:text-secondary lg:transition-colors lg:duration-300 lg:hover:border-secondary";
+
+            const detailText = document.createElement("span");
+            detailText.className = "text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-dark lg:transition-colors lg:duration-300";
+            detailText.textContent = "Detaylı İncele";
+
+            const icon = document.createElement("i");
+            icon.className = "icon-arrow-right text-[16px] h-4 text-dark lg:transition-colors lg:duration-300";
+
+            detailLink.appendChild(detailText);
+            detailLink.appendChild(icon);
+
+            card.appendChild(top);
+            card.appendChild(detailLink);
+            return card;
+        };
+
+        const createIndexCard = (brand) => {
+            const card = document.createElement("div");
+            card.className = "flex flex-col items-center justify-between gap-2.5 relative rounded-2xl clamp-[p,20px,30px] border border-secondary/0 shadow-[0_9px_16px_-5px_rgba(30,30,30,0.13)] lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10";
+            card.appendChild(createOverlayLink(brand));
+
+            const logoWrap = document.createElement("div");
+            logoWrap.className = "block w-62.5 max-w-[95%] clamp-[h,90px,150px]";
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "full-contain";
+            logoWrap.appendChild(logo);
+
+            const title = document.createElement("h3");
+            title.className = "clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-dark text-center";
+            title.textContent = brand.title || "";
+
+            card.appendChild(logoWrap);
+            card.appendChild(title);
+            return card;
+        };
+
+        const createServiceDetailCard = (brand) => {
+            const card = document.createElement("div");
+            card.className = "clamp-[h,90px,130px] flex-center gap-2.5 relative rounded-2xl clamp-[py,20px,40px] clamp-[px,30px,50px] border border-dark/10 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10";
+            card.appendChild(createOverlayLink(brand));
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "full-contain";
+            card.appendChild(logo);
+
+            return card;
+        };
+
+        const createHeaderCard = (brand) => {
+            const item = document.createElement("li");
+
+            const link = document.createElement("a");
+            link.href = brand.url || "#";
+            link.title = brand.title || "Marka";
+            link.className = "group/s w-full lg:clamp-[h,85px,130px] flex-center border border-dark/10 rounded-xl clamp-[p,20px,40px] lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 max-lg:aspect-video";
+
+            const logo = document.createElement("img");
+            logo.src = brand.logo || "";
+            logo.alt = brand.title ? `${brand.title} logosu` : "Marka logosu";
+            logo.loading = "lazy";
+            logo.width = 150;
+            logo.height = 66;
+            logo.className = "full-contain";
+
+            link.appendChild(logo);
+            item.appendChild(link);
+            return item;
+        };
+
+        const layoutRenderers = {
+            brands: createBrandsPageCard,
+            index: createIndexCard,
+            "service-detail": createServiceDetailCard,
+            header: createHeaderCard,
+        };
+
+        const showGridState = (grid, text) => {
+            grid.replaceChildren();
+            const isList = grid.tagName === "UL" || grid.tagName === "OL";
+            const state = document.createElement(isList ? "li" : "p");
+            state.className = "col-span-full text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text text-center";
+            state.textContent = text;
+            grid.appendChild(state);
+        };
+
+        const mountBrands = (grid, brands) => {
+            const layout = grid.dataset.brandsLayout || "brands";
+            const createCard = layoutRenderers[layout] || createBrandsPageCard;
+            grid.replaceChildren();
+            if (!brands.length) {
+                showGridState(grid, "Gösterilecek marka bulunamadı.");
+                return;
+            }
+
+            brands.forEach((brand) => {
+                grid.appendChild(createCard(brand));
+            });
+        };
+
+        const requestCache = new Map();
+
+        const fetchBrands = async (url) => {
+            if (!requestCache.has(url)) {
+                requestCache.set(
+                    url,
+                    fetch(url).then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`Brands fetch failed: ${response.status}`);
+                        }
+                        return response.json();
+                    }),
+                );
+            }
+
+            return requestCache.get(url);
+        };
+
+        const initBrands = async () => {
+            const grids = Array.from(document.querySelectorAll("[data-brands-grid]"));
+            if (!grids.length) {
+                return;
+            }
+
+            await Promise.all(
+                grids.map(async (grid) => {
+                    const dataUrl = grid.dataset.brandsSrc || "assets/brands.json";
+                    try {
+                        const data = await fetchBrands(dataUrl);
+                        const brands = Array.isArray(data.brands) ? data.brands : [];
+                        mountBrands(grid, brands);
+                    } catch (error) {
+                        console.error(error);
+                        showGridState(grid, "Markalar yüklenemedi.");
+                    }
+                }),
+            );
+        };
+
+        initBrands();
+    })();
+</script>
+</body>
+</html>

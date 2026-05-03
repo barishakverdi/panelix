@@ -1,31 +1,91 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>haha</title>
-    <meta name="description" content="Site Açıklama Yazısı">
-    <meta name="keywords" content="vite starter, static site, coding">
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Vite Starter" />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="{{resolve-from-root "/style/app.css"}}">
-<!--    <link rel="stylesheet" href="{{resolve-from-root "/style/style.css"}}">-->
-    <script type="module" src="{{resolve-from-root "/script/script.js"}}"></script>
-    <script>
-        /* to prevent Firefox FOUC, this must be here */
-        let FF_FOUC_FIX;
-    </script>
-    <script>
-        let domReady = (cb) => { document.readyState === 'interactive' || document.readyState === 'complete' ? cb() : document.addEventListener('DOMContentLoaded', cb);};
-        domReady(() => { document.body.style.visibility = 'visible'; });
-    </script>
-</head>
-<body style="visibility: hidden">
-<script>0</script>
-    <header></header>
+{{> partials/head.hbs }}
+<header class="group/body fixed left-0 top-0 z-100 w-full h-(--headerHeight) transition-all duration-300 group-scrolling-down/body:bg-white group-scrolling-down/body:shadow-sm">
+    <div class="size-full flex relative">
+        <div class="container grow">
+            <div class="h-full flex items-center justify-between">
+                <a href="index.html" title="Ana sayfaya git" class="block max-lg:relative max-lg:z-2">
+                    <img src="assets/image/logo.svg" alt="" loading="eager" width="227" height="76" class="clamp-[w,125px,227px,] h-auto max-">
+                </a>
+                <div class="h-full flex items-center clamp-[gap,12px,18px,1024px]">
+                    <div x-show="$store.data.isDesktop || (!$store.data.isDesktop && $store.data.menuOpen)" x-collapse.duration.450ms class="lg:h-full max-lg:absolute max-lg:left-0 max-lg:top-0 max-lg:w-full max-lg:h-auto max-lg:max-h-svh max-lg:bg-white">
+                        <nav class="lg:h-full max-lg:pt-(--headerHeight)">
+                            <ul class="lg:h-full flex lg:items-center max-lg:h-auto max-lg:max-h-[calc(100svh-var(--headerHeight))] max-lg:overflow-y-auto max-lg:border-t max-lg:border-dark/10 max-lg:flex-col">
+                                {{#each header.nav as |item|}}
+                                    <li class="group/i relative lg:h-full max-lg:not-last:border-b max-lg:border-dark/10 max-lg:flex max-lg:items-center max-lg:justify-between max-lg:flex-wrap max-lg:gap-x-7.5 max-lg:pr-4" :class="{ 'toggle': $store.data.activeIndex === {{@index}} }"
+                                        @mouseleave="if ($store.data.isDesktop) { $store.data.activeIndex = -1; $store.data.dropdownMenuOpen = false;}">
+                                        <a href="{{item.url}}" {{#if item.subMenu}}data-has-sub-menu{{/if}} class="lg:h-full inline-flex items-center clamp-[gap,5px,10px] lg:clamp-[px,6px,12px] max-lg:py-1.5 max-lg:px-4 max-lg:w-[calc(100%-60px)]"
+                                           @mouseenter="if ($store.data.isDesktop) {
+                                              $store.data.activeIndex = $store.data.activeIndex === $store.data.activeIndex === {{@index}} ? -1 : {{@index}};;
+                                              if ($el.hasAttribute('data-has-sub-menu')) $store.data.dropdownMenuOpen = true;
+                                           }"
+                                           @click="if (!$store.data.isDesktop) $store.data.activeIndex = $store.data.activeIndex === {{@index}} ? -1 : {{@index}};">
+                                            <span class="clamp-[text,15px,18px,1024px,1920px] font-medium text-dark max-lg:text-[16px]">{{item.title}}</span>
+                                            {{#if item.subMenu}}
+                                                <i class="icon-angle-down text-[9px] h-2.25 text-dark transition-all duration-300 lg:group-hover/i:text-primary group-toggle/i:text-primary group-toggle/i:scale-y-[-1] max-lg:hidden!"></i>
+                                            {{/if}}
+                                        </a>
+                                        {{#if item.subMenu}}
+                                            <div class="lg:hidden size-7.5 border border-dark/10 rounded-full flex-center"
+                                                @click="$store.data.activeIndex = $store.data.activeIndex === {{@index}} ? -1 : {{@index}};">
+                                                <i class="icon-angle-down text-[12px] h-3 text-dark transition-transform duration-300 group-toggle/i:scale-y-[-1]"></i>
+                                            </div>
+                                            <div x-show="(!$store.data.isDesktop && $store.data.activeIndex === {{@index}}) || $store.data.isDesktop" x-collapse.duration.300ms class="lg:absolute lg:left-1/2 lg:top-full lg:-translate-x-1/2 lg:w-max max-lg:w-full">
+                                                <div x-show="($store.data.isDesktop && $store.data.activeIndex === {{@index}}) || !$store.data.isDesktop" x-transition.duration.300ms class="mt-2">
+                                                    {{#if (eq item.subMenu.type "services")}}
+                                                        <div class="w-full max-w-700">
+                                                            <div class="w-full lg:bg-white lg:shadow-card lg:rounded-2xl lg:clamp-[px,16px,30px] lg:clamp-[py,20px,30px] max-lg:pl-4 max-lg:pb-4">
+                                                                <ul class="grid grid-cols-2 lg:clamp-[gap,12px,16px] max-lg:grid-cols-1 max-lg:px-4 max-lg:border-l max-lg:border-dark/10">
+                                                                    {{#each item.subMenu.items as |sub|}}
+                                                                        <li class="max-lg:not-last:border-b max-lg:border-dark/10">
+                                                                            <a href="{{sub.url}}" title="{{sub.title}}" class="group/s w-full inline-flex items-center lg:clamp-[gap,8px,12px] lg:border lg:border-dark/10 lg:rounded-xl lg:px-4 lg:py-3 lg:transition-colors lg:duration-300 lg:hover:border-secondary lg:hover:bg-secondary/10 lg:not-[&:has(img)]:justify-center max-lg:py-2">
+                                                                                {{#if sub.icon}}
+                                                                                    <span class="size-10 flex-center bg-secondary/10 rounded-md lg:transition-colors lg:duration-300 max-lg:hidden">
+                                                                                        <img src="{{sub.icon}}" alt="" loading="lazy" width="16" height="18" class="w-auto h-4.5">
+                                                                                    </span>
+                                                                                {{/if}}
+                                                                                <span class="text-[16px] leading-tight font-medium tracking-[-0.16px] text-dark">{{sub.title}}</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    {{/each}}
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    {{else if (eq item.subMenu.type "brands")}}
+                                                        <div class="w-full max-w-263">
+                                                            <div class="w-full lg:bg-white lg:shadow-card lg:rounded-2xl lg:clamp-[px,16px,30px] lg:clamp-[py,20px,30px]">
+                                                                <ul class="grid grid-cols-4 clamp-[gap,12px,24px] max-lg:grid-cols-2 max-lg:p-4 max-lg:pr-0"
+                                                                    data-brands-grid
+                                                                    data-brands-layout="header"
+                                                                    data-brands-src="assets/index-brands.json">
+                                                                    <li class="col-span-full text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text text-center">Markalar yükleniyor...</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    {{/if}}
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </nav>
+                    </div>
+                    {{> partials/components/button.hbs
+                        text="Bizi Hemen Ara"
+                        icon="icon-phone"
+                        url="tel:+905350577188"
+                        color="primary"
+                        class="max-lg:[&_i]:hidden! max-lg:px-4 max-lg:py-2 max-lg:rounded-lg"
+                    }}
+                    <button type="button" class="lg:hidden w-10 h-11 px-1" @click="$store.data.menuOpen = !$store.data.menuOpen">
+                        <span class="size-full flex-center flex-col gap-1.5 relative">
+                            <span class="block w-full h-0.5 bg-primary rounded-1 transition-transform duration-300" :class="{ 'rotate-45 translate-y-2': $store.data.menuOpen }"></span>
+                            <span class="block w-full h-0.5 bg-primary rounded-1 transition-opacity duration-300" :class="{ 'opacity-0': $store.data.menuOpen }"></span>
+                            <span class="block w-full h-0.5 bg-primary rounded-1 transition-transform duration-300" :class="{ '-rotate-45 -translate-y-2': $store.data.menuOpen }"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

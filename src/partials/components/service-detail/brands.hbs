@@ -1,0 +1,15 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="max-w-200 mx-auto flex flex-col items-center gap-6 clamp-[mb,24px,50px]">
+            <h2 class="text-h2 text-dark text-center *:text-secondary">Servis Verdiğimiz Markalar</h2>
+            <p class="text-body text-text text-center">Samsung, LG, Vestel, Philips, Sony, TCL, Arçelik, Beko ve birçok farklı marka için servis desteği sağlanabilmektedir.</p>
+        </div>
+        <div class="grid grid-cols-12 gap-6 max-lg:grid-cols-1">
+            <div class="lg:col-span-2 max-lg:hidden"></div>
+            <div class="lg:col-span-8 grid grid-cols-4 clamp-[gap,16px,24px] max-lg:grid-cols-2" data-brands-grid data-brands-layout="service-detail" data-brands-src="assets/index-brands.json">
+                <p class="col-span-full text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text text-center">Markalar yükleniyor...</p>
+            </div>
+            <div class="lg:col-span-2 max-lg:hidden"></div>
+        </div>
+    </div>
+</section>

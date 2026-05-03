@@ -1,2 +1,98 @@
-</body>
-</html>
+<footer>
+    <div class="bg-primary clamp-[pt,50px,100px] pb-12.5">
+        <div class="container">
+            <div class="grid grid-cols-[auto_1fr_1fr_1fr] clamp-[gap,24px,50px] max-lg:grid-cols-3 max-md:grid-cols-2">
+                <div class="lg:clamp-[w,350px,524px] flex flex-col gap-6 max-lg:col-span-full">
+                    <img src="assets/image/logo-white.svg" alt="" loading="lazy" width="227" height="76" class="clamp-[w,150px,227px] h-auto">
+                    <p class="text-body text-white/80 mt-2.5">İstanbul genelinde TV panel değişimi, kırık ekran değişimi, LED arızası ve görüntü problemlerine profesyonel teknik servis çözümleri sunuyoruz.</p>
+                    <p class="text-body text-white/80">Çalışma Saatleri: 09:00 – 19:00 <br>İstanbul Geneli Hizmet</p>
+                    <ul class="flex flex-wrap clamp-[gap,9px,14px]">
+                        {{#each socialMedia as |item|}}
+                            <li>
+                                <a href="{{item.url}}" title="{{item.title}}" class="size-11 bg-white/10 border border-white/10 rounded-full flex-center lg:transition-colors lg:duration-300 lg:hover:bg-secondary lg:hover:border-secondary">
+                                    <i class="{{item.icon}} text-[18px] h-4.5 text-white"></i>
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    {{> partials/components/button.hbs
+                        text="WhatsApp ile Ulaşın"
+                        icon="icon-whatsapp"
+                        url="https://wa.me/+905350577188"
+                        color="whatsapp"
+                        class="lg:clamp-[w,240px,320px]"
+                    }}
+                </div>
+                {{#each footer.menus as |menu|}}
+                    <div>
+                        <p class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-white mb-5">{{menu.title}}</p>
+                        <ul class="border-l border-white/10 clamp-[pl,16px,24px]">
+                            {{#each menu.items as |item|}}
+                                <li>
+                                    <a href="{{item.url}}" class="inline-block text-body text-white/80 py-1.25 lg:transition-colors lg:duration-300 lg:hover:text-white">{{item.title}}</a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/each}}
+                <div class="max-md:col-span-full">
+                    <p class="clamp-[text,18px,24px] font-medium clamp-[tracking,-0.18px,-0.24px] text-white mb-5">İletişim</p>
+                    <ul class="flex flex-col gap-4">
+                        <li>
+                            <a href="tel:+905350577188" title="0535 057 71 88" class="group/a inline-flex items-center gap-2.5">
+                               <span class="size-7.5 bg-secondary rounded-full flex-center lg:transition-colors lg:duration-300 lg:group-hover/a:bg-white">
+                                   <i class="icon-phone text-[16px] h-4 text-white lg:transition-colors lg:duration-300 lg:group-hover/a:text-dark"></i>
+                               </span>
+                               <span class="text-body font-medium text-white">0535 057 71 88</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/+905350577188" target="_blank" title="Whatsapp'tan İletişime Geç" class="group/a inline-flex items-center gap-2.5">
+                               <span class="size-7.5 bg-[#25D366] rounded-full flex-center lg:transition-colors lg:duration-300 lg:group-hover/a:bg-[#19b351]">
+                                   <i class="icon-whatsapp text-[16px] h-4 text-dark lg:transition-colors lg:duration-300 lg:group-hover/a:text-white"></i>
+                               </span>
+                               <span class="text-body font-medium text-white">0535 057 71 88</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://maps.google.com" class="inline-block text-body text-white/80 lg:transition-colors lg:duration-300 lg:hover:text-white">Sakızağacı, Cevizli Yalı Sk. NO:5/A, 34000 Bakırköy/İstanbul</a>
+                        </li>
+                        <li>
+                            <div class="border border-white/10 p-4 rounded-xl flex flex-col gap-6">
+                                <div class="flex items-center justify-between gap-2">
+                                    <img src="assets/image/index/google.svg" alt="" loading="lazy" width="40" height="41" class="w-5 h-auto">
+                                    <a href="https://www.google.com/maps/place/Bak%C4%B1rk%C3%B6y+Led+Tv+Uydu+Teknik+Servis+(Furkan+Elektronik)/@40.9783555,28.8799314,17z/data=!4m8!3m7!1s0x14cabd82ad2f92df:0x9b973e9e51891f4a!8m2!3d40.9784163!4d28.8813262!9m1!1b1!16s%2Fg%2F11h4pvzcp6?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" title="Google yorumlarını gör" class="block">
+                                        <i class="icon-arrow-up-right text-[16px] h-4 text-white"></i>
+                                    </a>
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <p class="text-[20px] leading-tight font-medium tracking-[-0.2px] text-white">4,9/5</p>
+                                    <p class="text-[14px] leading-[1.6] tracking-[-0.14px] text-white/80">150+ yorum</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-secondary py-5">
+        <div class="container">
+            <div class="flex items-center justify-between gap-4 max-md:flex-col max-md:text-center">
+                <p class="text-body text-white">© 2026 Panelix. Tüm hakları saklıdır.</p>
+                <ul class="flex flex-wrap gap-x-5 gap-y-3.5 list-disc list-inside text-body text-white max-md:justify-center">
+                    <li>
+                        <a href="template.html">KVKK Aydınlatma Metni</a>
+                    </li>
+                    <li>
+                        <a href="template.html">Gizlilik Politikası</a>
+                    </li>
+                    <li>
+                        <a href="template.html">Çerez Politikası</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+{{> partials/foot.hbs }}

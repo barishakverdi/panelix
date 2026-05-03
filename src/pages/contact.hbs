@@ -1,0 +1,93 @@
+{{> partials/header.hbs }}
+
+<main>
+    <div class="w-full h-(--headerHeight) bg-white"></div>
+    <div class="clamp-[py,25px,50px] bg-white">
+        <div class="container">
+            {{> partials/components/breadcrumb.hbs
+                breadcrumb=(array
+                    (object text="Ana Sayfa" url="index.html")
+                    (object text="İletişim" url="contact.html")
+                )
+            }}
+        </div>
+    </div>
+    {{> partials/components/hero.hbs
+        title="İletişim"
+        description="TV panel değişimi, kırık ekran, led arızası ve görüntü problemleri hakkında bilgi almak için bizimle iletişime geçebilirsiniz. WhatsApp üzerinden arıza detaylarını paylaşarak ön bilgi alabilirsiniz."
+    }}
+    <section data-module style="--min-pt: 40; --max-pt: 50; --min-pb: 70; --max-pb: 100; --min-w: 768; --max-w: 1600;">
+        <div class="container">
+            <div class="grid grid-cols-4 clamp-[gap,12px,20px] max-xl:grid-cols-2 max-sm:grid-cols-1">
+                <div class="bg-white rounded-2xl border border-dark/10 clamp-[px,18px,24px] clamp-[py,18px,24px] min-h-45 flex flex-col justify-between gap-6">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark">Telefon</h2>
+                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text">Hızlı destek ve bilgi için bizi arayabilirsiniz.</p>
+                    </div>
+                    <a href="tel:+905350577188" title="Telefon ile iletişime geç" class="group inline-flex items-center gap-3 w-fit border-b border-dark/40 pb-1.25 lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                        <span class="size-8 rounded-full bg-secondary flex-center lg:transition-colors lg:duration-300 lg:group-hover:bg-primary">
+                            <i class="icon-phone text-[16px] h-4 text-white lg:transition-colors lg:duration-300"></i>
+                        </span>
+                        <span class="text-2xl leading-tight font-medium tracking-[-0.24px] text-dark lg:transition-colors lg:duration-300 lg:group-hover:text-secondary">0535 057 71 88</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-dark/10 clamp-[px,18px,24px] clamp-[py,18px,24px] min-h-45 flex flex-col justify-between gap-6">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark">WhatsApp</h2>
+                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text">Arıza detaylarını ve TV modelini paylaşarak ön bilgi alabilirsiniz.</p>
+                    </div>
+                    <a href="https://wa.me/+905350577188" target="_blank" rel="noopener noreferrer" title="WhatsApp ile iletişime geç" class="group inline-flex items-center gap-3 w-fit border-b border-dark/40 pb-1.25 lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                        <span class="size-8 rounded-full bg-[#25D366] flex-center lg:transition-colors lg:duration-300 lg:group-hover:bg-[#19b351]">
+                            <i class="icon-whatsapp text-[16px] h-4 text-dark lg:transition-colors lg:duration-300 lg:group-hover:text-white"></i>
+                        </span>
+                        <span class="text-2xl leading-tight font-medium tracking-[-0.24px] text-dark lg:transition-colors lg:duration-300 lg:group-hover:text-secondary">0535 057 71 88</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-dark/10 clamp-[px,18px,24px] clamp-[py,18px,24px] min-h-45 flex flex-col gap-2">
+                    <h2 class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark">Çalışma Saatleri</h2>
+                    <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text">09:00 - 19:00</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-dark/10 clamp-[px,18px,24px] clamp-[py,18px,24px] min-h-45 flex flex-col justify-between gap-6">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark">Hizmet Bölgesi</h2>
+                        <p class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text">Bakırköy merkezli, İstanbul geneline hizmet</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Bak%C4%B1rk%C3%B6y+Led+Tv+Uydu+Teknik+Servis" target="_blank" rel="noopener noreferrer" title="Google Haritalar'da yol tarifi al" class="group inline-flex items-center gap-3 w-fit border-b border-dark/40 pb-1.25 lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                        <span class="size-8 rounded-full bg-secondary flex-center lg:transition-colors lg:duration-300 lg:group-hover:bg-primary">
+                            <i class="icon-location-pin text-[16px] h-4 text-white lg:transition-colors lg:duration-300"></i>
+                        </span>
+                        <span class="text-2xl leading-tight font-medium tracking-[-0.24px] text-dark lg:transition-colors lg:duration-300 lg:group-hover:text-secondary">Yol Tarifi Al</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-dark/10 clamp-[px,18px,24px] clamp-[py,18px,24px] clamp-[mt,12px,16px] flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <h2 class="clamp-[text,24px,30px] leading-tight font-medium tracking-[-0.3px] text-dark">Adres</h2>
+                    <address class="text-[16px] leading-[1.8] font-medium tracking-[-0.08px] text-text not-italic">Sakızağacı, Cevizli Yalı Sk. NO:5/A, 34000 Bakırköy/İstanbul</address>
+                </div>
+                <a href="https://maps.google.com/?q=Sak%C4%B1za%C4%9Fac%C4%B1,+Cevizli+Yal%C4%B1+Sk.+NO:5/A,+34000+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener noreferrer" title="Google Haritalar'da adrese yol tarifi al" class="group inline-flex items-center gap-3 w-fit border-b border-dark/40 pb-1.25 lg:transition-colors lg:duration-300 lg:hover:border-secondary">
+                    <span class="size-8 rounded-full bg-secondary flex-center lg:transition-colors lg:duration-300 lg:group-hover:bg-primary">
+                        <i class="icon-location-pin text-[16px] h-4 text-white lg:transition-colors lg:duration-300"></i>
+                    </span>
+                    <span class="text-2xl leading-tight font-medium tracking-[-0.24px] text-dark lg:transition-colors lg:duration-300 lg:group-hover:text-secondary">Yol Tarifi Al</span>
+                </a>
+            </div>
+
+            <div class="clamp-[mt,16px,40px] rounded-2xl overflow-hidden border border-dark/10">
+                <iframe
+                    src="https://maps.google.com/maps?q=Sak%C4%B1za%C4%9Fac%C4%B1,+Cevizli+Yal%C4%B1+Sk.+NO:5/A,+34000+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    title="Panelix servis konumu"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-80 md:h-115 lg:h-145"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{> partials/footer.hbs }}

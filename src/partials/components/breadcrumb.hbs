@@ -1,0 +1,7 @@
+<ul class="inline-block text-body text-text lg:*:transition-colors lg:*:duration-300 lg:*:hover:text-dark *:last:text-dark [&_li+li]:before:content-['/'] [&_li+li]:before:mx-2">
+    {{#each breadcrumb as |item|}}
+        <li class="inline">
+            <a href="{{item.url}}">{{item.text}}</a>
+        </li>
+    {{/each}}
+</ul>

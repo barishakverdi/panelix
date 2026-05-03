@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite'
 import postcss from "postcss";
 // import postcss from '@vituum/vite-plugin-postcss'
 import handlebars from '@vituum/vite-plugin-handlebars'
+import helpers from "handlebars-helpers";
+const hbsHelpers = helpers();
 import fs from 'fs/promises';
 
 const headFix = () => ({
@@ -83,34 +85,61 @@ const moveComponentsToDist = () => ({
 export default defineConfig({
     plugins: [
         vituum({
-            input: ['./src/style/*.{css,pcss,scss,sass,less,styl,stylus}', './src/script/*.{js,ts,mjs}'],
+            input: ["./src/style/*.{css,pcss,scss,sass,less,styl,stylus}", "./src/script/*.{js,ts,mjs}"],
         }),
         tailwindcss(),
         postcss(),
         handlebars({
             root: "./src",
             helpers: {
-                'resolve-from-root': (relativePath) => path.join('/src', relativePath),
-                'uppercase': (text) => text.toUpperCase(),
-                'lowercase': (text) => text.toLowerCase(),
-                'capitalize': (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase(),
-                'add': (a, b) => a + b,
-                'subtract': (a, b) => a - b,
-                'join': (array, separator) => Array.isArray(array) ? array.join(separator) : '',
-                'length': (value) => value.length,
-                'formatDate': (date, format) => {
-                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                    return new Date(date).toLocaleDateString('tr-TR', options);
+                ...hbsHelpers,
+                "resolve-from-root": (relativePath) => path.join("/src", relativePath),
+                uppercase: (text) => text.toUpperCase(),
+                lowercase: (text) => text.toLowerCase(),
+                capitalize: (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase(),
+                eq: (a, b) => a === b,
+                add: (a, b) => a + b,
+                subtract: (a, b) => a - b,
+                join: (array, separator) => (Array.isArray(array) ? array.join(separator) : ""),
+                length: (value) => value.length,
+                formatDate: (date, format) => {
+                    const options = { year: "numeric", month: "long", day: "numeric" };
+                    return new Date(date).toLocaleDateString("tr-TR", options);
                 },
-                'debug': (value) => {
+                variable: function (name, value, options) {
+                    if (options?.data?.root) {
+                        options.data.root[name] = value;
+                    }
+                    return "";
+                },
+                for: function (start, end, step, options) {
+                    let output = "";
+                    for (let i = start; i < end; i += step) {
+                        output += options.fn(i);
+                    }
+                    return output;
+                },
+                debug: (value) => {
                     console.log(value);
-                    return '';
-                }
+                    return "";
+                },
+                array: (...items) => {
+                    items.pop(); // handlebars options objesini kaldırır
+                    return items;
+                },
+
+                object: (...args) => {
+                    const options = args.pop();
+                    return options.hash;
+                },
             },
         }),
-        headFix(), moveDataToDist(), moveComponentsToDist()],
+        headFix(),
+        moveDataToDist(),
+        moveComponentsToDist(),
+    ],
     server: {
-        host: "0.0.0.0"
+        host: "0.0.0.0",
     },
     css: {
         devSourcemap: true,
@@ -123,10 +152,10 @@ export default defineConfig({
         legalComments: "none",
         rollupOptions: {
             output: {
-                chunkFileNames: 'assets/script/[name].js',
-                entryFileNames: 'assets/script/[name].js',
-                assetFileNames: 'assets/style/[name][extname]',
+                chunkFileNames: "assets/script/[name].js",
+                entryFileNames: "assets/script/[name].js",
+                assetFileNames: "assets/style/[name][extname]",
             },
         },
     },
-})
+});

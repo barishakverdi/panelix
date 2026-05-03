@@ -1,0 +1,158 @@
+{
+    "blog": {
+        "intro": "Televizyonlarda en sık karşılaşılan arızalar, çözüm yolları ve servis süreci hakkında hazırladığımız içerikleri inceleyin.",
+        "posts": [
+            {
+                "title": "TV’de Ses Var Görüntü Yok Neden Olur?",
+                "description": "Televizyon açılıyor ve ses geliyor ancak ekranda görüntü oluşmuyorsa led, panel veya görüntü aktarımıyla ilgili bir arıza olabilir. Bu durum en sık karşılaşılan sorunlardan biridir.",
+                "date": "12.01.2026",
+                "category": "TV Arızaları",
+                "image": "assets/image/index/image-8.jpg",
+                "url": "blog-detail.html"
+            },
+            {
+                "title": "Kırık TV Ekranı Tamir Edilir mi?",
+                "description": "Panel kırığı, darbe sonrası oluşan görüntü bozulmaları ve ekran hasarlarında hangi durumlarda onarım, hangi durumlarda değişim gerektiğini açıklıyoruz.",
+                "date": "12.01.2026",
+                "category": "Panel ve Ekran Sorunları",
+                "image": "assets/image/index/image-7.jpg",
+                "url": "blog-detail.html"
+            },
+            {
+                "title": "TV Panel Değişimi mi Yeni TV Almak mı?",
+                "description": "Panel değişimi ile yeni televizyon alma kararı arasında kalıyorsanız, maliyet, kullanım ömrü ve model uyumu açısından dikkat edilmesi gerekenleri değerlendirin.",
+                "date": "12.01.2026",
+                "category": "Panel ve Ekran Sorunları",
+                "image": "assets/image/index/image-6.jpg",
+                "url": "blog-detail.html"
+            },
+            {
+                "title": "Mavi Ekran Sorunu Neden Oluşur?",
+                "description": "Mavi ekran, sinyal kaybı, panel, görüntü kartı veya iç donanım kaynaklı problemlerden kaynaklanabilir. Sorunun doğru tespiti için detaylı inceleme gerekir.",
+                "date": "12.01.2026",
+                "category": "TV Arızaları",
+                "image": "assets/image/index/image-5.jpg",
+                "url": "blog-detail.html"
+            },
+            {
+                "title": "Ekranda Çizgiler Neden Oluşur?",
+                "description": "Dikey ya da yatay çizgiler, panel yüzeyinde hasar veya ekran bileşenlerinde bozulma olduğuna işaret edebilir. Özellikle artan çizgiler ilerleyen arızaların habercisi olabilir.",
+                "date": "12.01.2026",
+                "category": "Kullanıcı Rehberi",
+                "image": "assets/image/index/image-4.jpg",
+                "url": "blog-detail.html"
+            }
+        ],
+        "categories": [
+            {
+                "title": "TV Arıza Rehberi"
+            },
+            {
+                "title": "Panel ve Ekran Sorunları",
+                "active": true
+            },
+            {
+                "title": "LED / Backlight Sorunları"
+            },
+            {
+                "title": "Marka Bazlı Sorunlar"
+            },
+            {
+                "title": "Servis Rehberi"
+            },
+            {
+                "title": "Kullanıcı Rehberi"
+            }
+        ],
+        "detail": {
+            "date": "12.01.2026",
+            "category": "TV Arıza Rehberi",
+            "title": "TV’de Ses Var Görüntü Yok Neden Olur?",
+            "description": "Televizyonunuz açılıyor, ses geliyor ancak ekranda hiçbir görüntü oluşmuyorsa bunun arkasında LED, panel, reflektör veya farklı görüntü bileşenleriyle ilgili teknik problemler olabilir. Bu yazıda, “ses var görüntü yok” arızasının en yaygın nedenlerini ve bu durumda neler yapılması gerektiğini ele alıyoruz.",
+            "readTime": "2 dk okuma süresi",
+            "heroImage": "assets/image/index/image-8.jpg",
+            "tableOfContents": [
+                "TV’de ses var görüntü yok sorunu ne anlama gelir?",
+                "Bu arızanın en yaygın nedenleri nelerdir?",
+                "Evde kontrol edilebilecek basit noktalar",
+                "Hangi durumda teknik servis gerekir?",
+                "İlgili hizmetler"
+            ],
+            "homeChecks": [
+                "TV’nin farklı bir giriş kaynağında da aynı sorunu verip vermediğini kontrol edin.",
+                "Kumanda ile ses açma-kısma ve kanal geçişlerinin çalışıp çalışmadığını test edin.",
+                "Ekrana çok dikkatli bakıldığında silik bir görüntü olup olmadığını kontrol edin.",
+                "Cihazı kapatıp kısa bir süre sonra yeniden açmayı deneyin.",
+                "Farklı priz veya elektrik bağlantısı ihtimalini değerlendirin."
+            ],
+            "services": [
+                {
+                    "title": "TV LED Değişimi",
+                    "description": "Ses var görüntü yok, ekran kararması ve ışık kaybı gibi belirtilerde LED sistemi kaynaklı arızalara teknik destek sağlıyoruz.",
+                    "icon": "assets/image/index/icon-7.svg",
+                    "url": "service-detail.html"
+                },
+                {
+                    "title": "TV Panel Değişimi",
+                    "description": "Panel kaynaklı hasar ve görüntü problemlerinde cihaz modeline uygun onarım ve değişim sürecini planlıyoruz.",
+                    "icon": "assets/image/index/icon-5.svg",
+                    "url": "service-detail.html"
+                },
+                {
+                    "title": "LED ve Reflektör Değişimi",
+                    "description": "Aydınlatma ve ışık dağılımı problemlerinde reflektör ve ilgili bileşenlerde profesyonel servis desteği sunuyoruz.",
+                    "icon": "assets/image/index/icon-6.svg",
+                    "url": "service-detail.html"
+                }
+            ],
+            "faq": [
+                {
+                    "title": "TV’de ses var ama görüntü yoksa sebep ne olabilir?",
+                    "description": "Bu durum çoğunlukla LED, panel, reflektör veya görüntü aktarımıyla ilgili teknik sorunlardan kaynaklanabilir."
+                },
+                {
+                    "title": "Ses var görüntü yok sorunu tamir edilebilir mi?",
+                    "description": "Evet, arızanın kaynağına göre birçok durumda tamir veya parça değişimi mümkündür. Net çözüm için teknik inceleme gerekir."
+                },
+                {
+                    "title": "Bu sorun ekran kırığı olmadan da olur mu?",
+                    "description": "Olabilir. Fiziksel kırık olmadan da LED, panel katmanları veya anakart üzerindeki görüntü bileşenlerinde arıza gelişebilir."
+                },
+                {
+                    "title": "Ekranda silik görüntü varsa bu ne anlama gelir?",
+                    "description": "Silik görüntü çoğu zaman arka aydınlatma sistemindeki LED problemlerine işaret eder. Bu belirti uzman kontrolü gerektirir."
+                },
+                {
+                    "title": "İstanbul genelinde servis desteği veriyor musunuz?",
+                    "description": "Evet, İstanbul genelinde TV arıza tespiti ve uygun teknik servis süreçleri için destek sağlıyoruz."
+                }
+            ],
+            "relatedPosts": [
+                {
+                    "title": "Kırık TV Ekranı Tamir Edilir mi?",
+                    "description": "Televizyon açılıyor ve ses geliyor ancak ekranda görüntü oluşmuyorsa led, panel veya görüntü aktarımı ile ilgili arızalar değerlendirilebilir.",
+                    "date": "12.01.2026",
+                    "category": "TV Arızaları",
+                    "image": "assets/image/index/image-8.jpg",
+                    "url": "blog-detail.html"
+                },
+                {
+                    "title": "TV Panel Değişimi mi Yeni TV Almak mı?",
+                    "description": "Televizyon açılıyor ve ses geliyor ancak ekranda görüntü oluşmuyorsa led, panel veya görüntü aktarımı ile ilgili arızalar değerlendirilebilir.",
+                    "date": "12.01.2026",
+                    "category": "TV Arızaları",
+                    "image": "assets/image/index/image-6.jpg",
+                    "url": "blog-detail.html"
+                },
+                {
+                    "title": "Mavi Ekran Sorunu Neden Olur?",
+                    "description": "Televizyon açılıyor ve ses geliyor ancak ekranda görüntü oluşmuyorsa led, panel veya görüntü aktarımı ile ilgili arızalar değerlendirilebilir.",
+                    "date": "12.01.2026",
+                    "category": "TV Arızaları",
+                    "image": "assets/image/index/image-5.jpg",
+                    "url": "blog-detail.html"
+                }
+            ]
+        }
+    }
+}

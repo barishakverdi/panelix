@@ -1,0 +1,25 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="container">
+        <div class="grid grid-cols-12 gap-6 max-lg:grid-cols-1">
+            <div class="lg:col-span-6 lg:clamp-[py,24px,60px]">
+                <h2 class="text-h2 text-dark mb-6">Neden Panelix?</h2>
+                <div class="grid grid-cols-2 clamp-[gap,12px,16px] max-lg:flex max-lg:flex-wrap">
+                    {{#each (array (object title="TV panel ve görüntü arızalarında uzman yaklaşım" icon="assets/image/index/icon-1.svg")
+                                (object title="İstanbul geneli servis" icon="assets/image/index/icon-2.svg")
+                                (object title="Marka ve model bazlı değerlendirme" icon="assets/image/index/icon-1.svg")
+                                (object title="Süreç boyunca bilgilendirme" icon="assets/image/index/icon-3.svg")
+                                (object title="Güven ve müşteri memnuniyeti odaklı hizmet " icon="assets/image/index/icon-1.svg")) as |item|}}
+                        <div class="bg-white px-4 clamp-[py,12px,16px] rounded-xl inline-flex items-center clamp-[gap,12px,16px] shadow-[0_5px_11.5px_-2px_rgba(30,30,30,0.08)]">
+                            <img src="{{item.icon}}" alt="" loading="eager" width="20" height="18" class="clamp-[w,18px,20px] h-auto">
+                            <span class="text-[16px] font-medium leading-tight tracking-[-0.16px] text-dark">{{item.title}}</span>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="lg:col-span-1 max-lg:hidden"></div>
+            <div class="lg:col-span-5">
+                <img src="assets/image/index/image-9.jpg" alt="" loading="lazy" width="798" height="628" class="full-cover rounded-xl">
+            </div>
+        </div>
+    </div>
+</section>

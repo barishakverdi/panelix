@@ -1,0 +1,29 @@
+<section data-module style="--min-pt: {{minPt}}; --max-pt: {{maxPt}}; --min-pb: {{minPb}}; --max-pb: {{maxPb}}; --min-w: {{#if minW}}{{minW}}{{else}}768{{/if}}; --max-w: {{#if maxW}}{{maxW}}{{else}}1600{{/if}}">
+    <div class="bg-[#EEEEEE] clamp-[py,50px,100px]">
+        <div class="container">
+            <h2 class="text-h1 text-dark text-center *:text-secondary clamp-[mb,24px,50px]">TV Panel Değişimi Süreci Nasıl İlerler?</h2>
+            <div class="grid grid-cols-4 gap-6 clamp-[mb,50px,100px] max-lg:grid-cols-2 max-md:grid-cols-1">
+                {{#each service-detail.process as |item|}}
+                    <div class="border border-dark/10 rounded-xl clamp-[p,16px,30px]">
+                        <h3 class="clamp-[text,20px,24px] font-medium tracking-[-0.24px] text-dark mb-3">{{item.title}}</h3>
+                        <p class="text-[16px] leading-[1.8] tracking-[-0.08px] text-text">{{item.description}}</p>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="w-full max-w-165.25 mx-auto flex clamp-[gap,10px,20px] *:w-full max-md:flex-col">
+                {{> partials/components/button.hbs
+                    text="Fiyat Teklifi Al"
+                    icon="icon-phone"
+                    url="tel:+905350577188"
+                    color="primary"
+                }}
+                {{> partials/components/button.hbs
+                    text="Whatsapp’tan Fiyat Sor"
+                    icon="icon-whatsapp"
+                    url="https://wa.me/+905350577188"
+                    color="whatsapp"
+                }}
+            </div>
+        </div>
+    </div>
+</section>

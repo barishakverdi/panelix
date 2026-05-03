@@ -1,0 +1,218 @@
+{
+    "header": {
+        "nav": [
+            {
+                "title": "Hizmetlerimiz",
+                "url": "services.html",
+                "subMenu": {
+                    "type": "services",
+                    "items": [
+                        {
+                            "title": "TV Panel Değişimi",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "Kırık Ekran TV Değişimi",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "TV LED Değişimi",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "TV Led ve Reflektör Değişimi",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "TV Anakart Tamiri",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "TV Güç Kartı Tamiri",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "TV Görüntü Sorunları Çözümleri",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "Smart TV Yazılım / Güncelleme",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "TV Kurulum ve Duvar Montajı",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        },
+                        {
+                            "title": "Uydu ve Kanal Ayarı",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon.svg"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "TV Arızaları",
+                "url": "services.html",
+                "subMenu": {
+                    "type": "services",
+                    "items": [
+                        {
+                            "title": "Ses Var Görüntü Yok TV Tamiri",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV Mavi Ekran Sorunu",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV Ekranında Lekeler / Parlamalar",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV Karanlık Gösteriyor",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV Açılıyor Ama Görüntü Gelmiyor",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV Ekran Çatladı Ne Yapılmalı?",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV’de Dikey / Yatay Çizgi Sorunu",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV’de Işık Var Görüntü Yok",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV Kapanıp Açılıyor Sorunu",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        },
+                        {
+                            "title": "TV HDMI Görmüyor Sorunu",
+                            "url": "service-detail.html",
+                            "icon": "assets/image/header/icon-2.svg"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Markalara Göre",
+                "url": "brands.html",
+                "subMenu": {
+                    "type": "brands",
+                    "items": [
+                        {
+                            "title": "Samsung",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-1.png"
+                        },
+                        {
+                            "title": "LG",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-2.png"
+                        },
+                        {
+                            "title": "Vestel",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-3.png"
+                        },
+                        {
+                            "title": "Philips",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-4.png"
+                        },
+                        {
+                            "title": "Sony",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-5.png"
+                        },
+                        {
+                            "title": "TCL",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-6.png"
+                        },
+                        {
+                            "title": "Arçelik",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-7.png"
+                        },
+                        {
+                            "title": "Beko",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-8.png"
+                        },
+                        {
+                            "title": "Toshiba",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-9.png"
+                        },
+                        {
+                            "title": "Onvo",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-10.png"
+                        },
+                        {
+                            "title": "Sunny",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-11.png"
+                        },
+                        {
+                            "title": "Axen",
+                            "url": "service-detail.html",
+                            "logo": "assets/image/index/logo-12.png"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Hizmet Bölgeleri",
+                "url": "locations.html"
+            },
+            {
+                "title": "Panelix",
+                "url": "#",
+                "subMenu": {
+                    "type": "services",
+                    "items": [
+                        {
+                            "title": "Hakkımızda",
+                            "url": "about-us.html"
+                        },
+                        {
+                            "title": "Blog",
+                            "url": "blog.html"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "İletişim",
+                "url": "contact.html"
+            }
+        ]
+    }
+}

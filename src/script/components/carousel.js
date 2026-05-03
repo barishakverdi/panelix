@@ -1,7 +1,9 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+window.Swiper = Swiper;
+window.Autoplay = Autoplay;
 
-const slider = new Swiper('.main-slider', {
+/* const slider = new Swiper('.main-slider', {
     modules: [Navigation, Pagination, Autoplay],
     slidesPerView: 3,
     speed: 1000,
@@ -22,4 +24,4 @@ const slider = new Swiper('.main-slider', {
         clickable: true,
         bulletActiveClass: "active"
     }
-})
+}) */
