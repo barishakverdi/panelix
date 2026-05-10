@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-title" content="Panelix" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
     <meta name="theme-color" content="#0F172A" />
-    <!--    <link rel="stylesheet" href="../assets/style/style.css">-->
+    <!--    <link rel="stylesheet" href="../assets/style/style.css?v=1777811815832">-->
     <script>
         let FF_FOUC_FIX;
         let domReady = (cb) => { document.readyState === 'interactive' || document.readyState === 'complete' ? cb() : document.addEventListener('DOMContentLoaded', cb);};
@@ -33,8 +33,8 @@
             })
         })
     </script>
-  <script type="module" src="assets/script/script.js"></script>
-  <link rel="stylesheet" href="assets/style/app.css">
+  <script type="module" src="assets/script/script.js?v=1777811815832"></script>
+  <link rel="stylesheet" href="assets/style/app.css?v=1777811815832">
 </head>
 <body class="group/body clamp-[--headerHeight,85px,115px,1024px,1680px]" :class="{ 'overflow-hidden': $store.data.menuOpen || $store.data.dropdownMenuOpen }"
       x-init="$store.data.checkDevice()" @resize.window="$store.data.checkDevice()"

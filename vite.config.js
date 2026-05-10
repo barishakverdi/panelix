@@ -11,6 +11,8 @@ import helpers from "handlebars-helpers";
 const hbsHelpers = helpers();
 import fs from 'fs/promises';
 
+const buildAssetVersion = process.env.ASSET_VERSION || Date.now().toString();
+
 const headFix = () => ({
     name: "assets-fix",
     transformIndexHtml(html) {
@@ -20,6 +22,14 @@ const headFix = () => ({
             html = html.replace(/fetch\(['"`]\.\/src\/data\/data\.json['"`]\)/g, 'fetch("assets/data.json")');
             html = html.replace(/url=["'`](\/src\/partials\/components\/)([^"']+)\.hbs["'`]/g, 'url="components/$2.html"');
             html = html.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/src\/style\/([^"']+)["']>/g, '<link rel="stylesheet" href="../assets/style/$1">');
+            html = html.replace(
+                /href=(["'])((?:\.\.\/)?assets\/style\/[^"']+\.css)(?:\?[^"']*)?\1/g,
+                `href="$2?v=${buildAssetVersion}"`,
+            );
+            html = html.replace(
+                /src=(["'])((?:\.\.\/)?assets\/script\/script\.js)(?:\?[^"']*)?\1/g,
+                `src="$2?v=${buildAssetVersion}"`,
+            );
         }
         return html;
     },
