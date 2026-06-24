@@ -1,0 +1,22 @@
+{
+  "serviceAreas": {
+    "title": "İstanbul Genelinde Hizmet",
+    "description": "Bakırköy merkezli servis yapımızla İstanbul'un birçok ilçesine hizmet sunuyoruz. Özellikle Bakırköy ve çevresinde daha hızlı servis planlaması yapabiliyoruz.",
+    "areas": [
+      { "name": "Bakırköy",      "url": "/hizmet-bolgeleri/bakirkoy" },
+      { "name": "Bahçelievler",  "url": "/hizmet-bolgeleri/bahcelievler" },
+      { "name": "Zeytinburnu",   "url": "/hizmet-bolgeleri/zeytinburnu" },
+      { "name": "Küçükçekmece", "url": "/hizmet-bolgeleri/kucukcekmece" },
+      { "name": "Avcılar",       "url": "/hizmet-bolgeleri/avcilar" },
+      { "name": "Beylikdüzü",   "url": "/hizmet-bolgeleri/beylikduzu" },
+      { "name": "Kadıköy",       "url": "/hizmet-bolgeleri/kadikoy" },
+      { "name": "Üsküdar",       "url": "/hizmet-bolgeleri/uskudar" }
+    ],
+    "ctas": {
+      "bolgeLink": "/hizmet-bolgeleri",
+      "bolgeText": "Hizmet Bölgelerini İncele",
+      "whatsappNumber": "905000000000",
+      "whatsappText": "WhatsApp'tan Bölgenizi Sor"
+    }
+  }
+}
